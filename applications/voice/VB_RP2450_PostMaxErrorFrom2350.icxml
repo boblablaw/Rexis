@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<icxml:icxml xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gtfns="http://www.intervoice.com/gtfns/1.0" xmlns:icxml="http://www.intervoice.com/icxml" xmi:id="_j6swgQ42EeKaCsGQlZgx1Q" type="voiceBlockType" gtfns:version="1.5.1.0">
+  <icxml:variables xmi:id="_j6swhA42EeKaCsGQlZgx1Q">
+    <icxml:variable xmi:id="_j6swhQ42EeKaCsGQlZgx1Q" name="intv_appType"/>
+    <icxml:variable xmi:id="_j6swhg42EeKaCsGQlZgx1Q" name="intv_eventName"/>
+    <icxml:variable xmi:id="_j6swhw42EeKaCsGQlZgx1Q" name="intv_eventData"/>
+    <icxml:variable xmi:id="_j62hgA42EeKaCsGQlZgx1Q" name="intv_noFieldsInitialized"/>
+    <icxml:variable xmi:id="_j62hgQ42EeKaCsGQlZgx1Q" name="intv_allFieldsInitialized"/>
+    <icxml:variable xmi:id="_j62hgg42EeKaCsGQlZgx1Q" name="intv_atLeastOneSituationExecuted"/>
+    <icxml:variable xmi:id="_j62hgw42EeKaCsGQlZgx1Q" name="intv_modalities"/>
+  </icxml:variables>
+  <icxml:form xsi:type="icxml:BlockEntry" xmi:id="_j62hhA42EeKaCsGQlZgx1Q" id="blockEntry_fumqej" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:blockEntry xmi:id="_j62hiQ42EeKaCsGQlZgx1Q" description="Description - ..."/><icxml:comment xmi:id="_j62hig42EeKaCsGQlZgx1Q"/><icxml:default xmi:id="_qacbIA42EeKaCsGQlZgx1Q" target="_p-uIcA42EeKaCsGQlZgx1Q" label=""/></icxml:form>
+  <icxml:form xsi:type="icxml:If" xmi:id="_p-uIcA42EeKaCsGQlZgx1Q" id="if_ruhger" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:if xmi:id="_p-35cA42EeKaCsGQlZgx1Q" elseLabel="RP2200_FaxOrEmail"><icxml:ifValue xmi:id="_p-35cQ42EeKaCsGQlZgx1Q" expr="_ws.gateKeeper.getString(&quot;NumberType&quot;) == 'SerialNumber'" label="ID3300_DNISCheck"/></icxml:if><icxml:comment xmi:id="_p-35cg42EeKaCsGQlZgx1Q"/><icxml:default xmi:id="_7744oA42EeKaCsGQlZgx1Q" target="_6qYNcA42EeKaCsGQlZgx1Q" gtfns:name="RP2200_FaxOrEmail" label="RP2200_FaxOrEmail"/><icxml:conditional xmi:id="_6RWCYA42EeKaCsGQlZgx1Q" target="_49AFoA42EeKaCsGQlZgx1Q" gtfns:name="ID3300_DNISCheck" label="ID3300_DNISCheck"/></icxml:form>
+  <icxml:form xsi:type="icxml:GotoBlock" xmi:id="_49AFoA42EeKaCsGQlZgx1Q" id="goToBlock_yofmap" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:gotoBlock xmi:id="_49AFoQ42EeKaCsGQlZgx1Q" functionalBlockName="/resource/RocheRPS_Rexis/applications/voice/VB_ID3300_DNISCheck.diagram" description="Description - ..."/><icxml:comment xmi:id="_49AFog42EeKaCsGQlZgx1Q"/></icxml:form>
+  <icxml:form xsi:type="icxml:GotoBlock" xmi:id="_6qYNcA42EeKaCsGQlZgx1Q" id="goToBlock_sinciq" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:gotoBlock xmi:id="_6qYNcQ42EeKaCsGQlZgx1Q" functionalBlockName="/resource/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.diagram" description="Description - ..."/><icxml:comment xmi:id="_6qYNcg42EeKaCsGQlZgx1Q"/></icxml:form>
+</icxml:icxml>

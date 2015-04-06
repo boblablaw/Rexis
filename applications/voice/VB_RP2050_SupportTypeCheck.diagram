@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Application Upgrader version 1.6.0.201011231509 at 2012-06-01 14:55:53.593 GMT-4--><!--Created by Application Upgrader version 1.6.0.201011231509 at 2012-06-01 14:55:33.656 GMT-4--><!--Created by Application Upgrader version 1.6.0.201011231509 at 2012-06-01 14:51:46.116 GMT-4--><notation:Diagram xmlns:xmi="http://www.omg.org/XMI" xmlns:icxml="http://www.intervoice.com/icxml"
+                  xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation"
+                  xmi:version="2.0"
+                  xmi:id="_Q5AEEnNdEeG35bzrS-ychQ"
+                  type="Icxml"
+                  name="VB_RP2050_SupportTypeCheck.diagram"
+                  measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Q5AEHXNdEeG35bzrS-ychQ" type="2047">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Q5AEH3NdEeG35bzrS-ychQ" type="5047">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_Q5AEIHNdEeG35bzrS-ychQ" y="5"/>
+      </children>
+      <element xmi:type="icxml:FunctionalBlockEntry"
+               href="VB_RP2050_SupportTypeCheck.icxml#_Q5AEHHNdEeG35bzrS-ychQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q5AEHnNdEeG35bzrS-ychQ" x="24" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_UizcVHNdEeG35bzrS-ychQ" type="2004">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Ui8mQHNdEeG35bzrS-ychQ" type="5004">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_Ui8mQXNdEeG35bzrS-ychQ" y="5"/>
+      </children>
+      <element xmi:type="icxml:Decision"
+               href="VB_RP2050_SupportTypeCheck.icxml#_UizcUHNdEeG35bzrS-ychQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UizcVXNdEeG35bzrS-ychQ" x="132" y="24"
+                        width="0"
+                        height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_jj6rE3NdEeG35bzrS-ychQ" type="2048">
+      <children xmi:type="notation:DecorationNode" xmi:id="_jj6rFnNdEeG35bzrS-ychQ" type="5048">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_jj6rF3NdEeG35bzrS-ychQ" y="5"/>
+      </children>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_jj6rFHNdEeG35bzrS-ychQ"/>
+      <element xmi:type="icxml:FunctionalBlockCall"
+               href="VB_RP2050_SupportTypeCheck.icxml#_jj6rEHNdEeG35bzrS-ychQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jj6rFXNdEeG35bzrS-ychQ" x="264" y="24"
+                        width="58"
+                        height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_kQxKA3NdEeG35bzrS-ychQ" type="2048">
+      <children xmi:type="notation:DecorationNode" xmi:id="_kQxKBnNdEeG35bzrS-ychQ" type="5048">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_kQxKB3NdEeG35bzrS-ychQ" y="5"/>
+      </children>
+      <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_kQxKBHNdEeG35bzrS-ychQ"/>
+      <element xmi:type="icxml:FunctionalBlockCall"
+               href="VB_RP2050_SupportTypeCheck.icxml#_kQxKAHNdEeG35bzrS-ychQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kQxKBXNdEeG35bzrS-ychQ" x="132" y="132"
+                        width="58"
+                        height="43"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Q5AEE3NdEeG35bzrS-ychQ"/>
+  <element xmi:type="icxml:RootType"
+            href="VB_RP2050_SupportTypeCheck.icxml#_Q5AEEXNdEeG35bzrS-ychQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_VaYkkXNdEeG35bzrS-ychQ" type="4001"
+          source="_Q5AEHXNdEeG35bzrS-ychQ"
+          target="_UizcVHNdEeG35bzrS-ychQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_VaYklHNdEeG35bzrS-ychQ" type="6001">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_VaYklXNdEeG35bzrS-ychQ" y="7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_VaYkknNdEeG35bzrS-ychQ"/>
+      <element xmi:type="icxml:DefaultConnection"
+               href="VB_RP2050_SupportTypeCheck.icxml#_VaYkkHNdEeG35bzrS-ychQ"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VaYkk3NdEeG35bzrS-ychQ"
+                  points="[29, -2, -79, -2]$[78, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_lNaYcXNdEeG35bzrS-ychQ" type="4002"
+          source="_UizcVHNdEeG35bzrS-ychQ"
+          target="_jj6rE3NdEeG35bzrS-ychQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_lNaYdHNdEeG35bzrS-ychQ" type="6002">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_lNaYdXNdEeG35bzrS-ychQ" y="7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_lNaYcnNdEeG35bzrS-ychQ"/>
+      <element xmi:type="icxml:ConditionalConnection"
+               href="VB_RP2050_SupportTypeCheck.icxml#_lNaYcHNdEeG35bzrS-ychQ"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lNaYc3NdEeG35bzrS-ychQ"
+                  points="[29, 2, -103, 2]$[131, 22, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_mgQgYXNdEeG35bzrS-ychQ" type="4001"
+          source="_UizcVHNdEeG35bzrS-ychQ"
+          target="_kQxKA3NdEeG35bzrS-ychQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_mgQgZHNdEeG35bzrS-ychQ" type="6001">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_mgQgZXNdEeG35bzrS-ychQ" y="7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_mgQgYnNdEeG35bzrS-ychQ"/>
+      <element xmi:type="icxml:DefaultConnection"
+               href="VB_RP2050_SupportTypeCheck.icxml#_mgQgYHNdEeG35bzrS-ychQ"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mgQgY3NdEeG35bzrS-ychQ"
+                  points="[1, 22, -2, -91]$[32, 135, 29, 22]"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:icxml="http://www.intervoice.com/icxml" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_OCE5km-UEeGtte0T2z7rbQ" type="Icxml" name="VB_ID3450_ITBloodGasProductName.diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_OCE5nW-UEeGtte0T2z7rbQ" type="2047">
+    <children xmi:type="notation:DecorationNode" xmi:id="_OCE5n2-UEeGtte0T2z7rbQ" type="5047">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_OCE5oG-UEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:FunctionalBlockEntry" href="VB_ID3450_ITBloodGasProductName.icxml#_OCE5nG-UEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OCE5nm-UEeGtte0T2z7rbQ" x="24" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_43TGA3KVEeG35bzrS-ychQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_43TGBnKVEeG35bzrS-ychQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_43TGB3KVEeG35bzrS-ychQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_43TGBHKVEeG35bzrS-ychQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3450_ITBloodGasProductName.icxml#_43TGAHKVEeG35bzrS-ychQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_43TGBXKVEeG35bzrS-ychQ" x="240" y="312" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_6qoE0nKVEeG35bzrS-ychQ" type="2027">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6qoE1HKVEeG35bzrS-ychQ" type="5027">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6qoE1XKVEeG35bzrS-ychQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Case" href="VB_ID3450_ITBloodGasProductName.icxml#_6qe64HKVEeG35bzrS-ychQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6qoE03KVEeG35bzrS-ychQ" x="348" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="__PIKw3KVEeG35bzrS-ychQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="__PIKxnKVEeG35bzrS-ychQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__PIKx3KVEeG35bzrS-ychQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="__PIKxHKVEeG35bzrS-ychQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3450_ITBloodGasProductName.icxml#__PIKwHKVEeG35bzrS-ychQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__PIKxXKVEeG35bzrS-ychQ" x="348" y="324" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_BVsOo3KWEeG35bzrS-ychQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BVsOpnKWEeG35bzrS-ychQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BVsOp3KWEeG35bzrS-ychQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_BVsOpHKWEeG35bzrS-ychQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3450_ITBloodGasProductName.icxml#_BVsOoHKWEeG35bzrS-ychQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BVsOpXKWEeG35bzrS-ychQ" x="816" y="24" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="___7wEXKqEeG35bzrS-ychQ" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="___7wE3KqEeG35bzrS-ychQ" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="___7wFHKqEeG35bzrS-ychQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3450_ITBloodGasProductName.icxml#___x_EHKqEeG35bzrS-ychQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="___7wEnKqEeG35bzrS-ychQ" x="468" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_y0A9Y3znEeGbO9u46mWIFg" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="_y0A9ZXznEeGbO9u46mWIFg" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_y0A9ZnznEeGbO9u46mWIFg" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3450_ITBloodGasProductName.icxml#_y0A9YHznEeGbO9u46mWIFg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y0A9ZHznEeGbO9u46mWIFg" x="348" y="132" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_9w8UkYpGEeGUwNmavaB-Zg" type="2006">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9w8UkopGEeGUwNmavaB-Zg" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9w8Uk4pGEeGUwNmavaB-Zg" y="5"/>
+    </children>
+    <element xmi:type="icxml:Log" href="VB_ID3450_ITBloodGasProductName.icxml#_9w8UlYpGEeGUwNmavaB-Zg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9w8UlIpGEeGUwNmavaB-Zg" x="348" y="204" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_dmdf4I4REeGenLMCoe7KWQ" type="2006">
+    <children xmi:type="notation:DecorationNode" xmi:id="_dmdf4Y4REeGenLMCoe7KWQ" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_dmdf4o4REeGenLMCoe7KWQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Log" href="VB_ID3450_ITBloodGasProductName.icxml#_dmdf5I4REeGenLMCoe7KWQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dmdf444REeGenLMCoe7KWQ" x="684" y="24" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_lg8qMI4REeGenLMCoe7KWQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lg8qMo4REeGenLMCoe7KWQ" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lg8qM44REeGenLMCoe7KWQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3450_ITBloodGasProductName.icxml#_lgglUI4REeGenLMCoe7KWQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lg8qMY4REeGenLMCoe7KWQ" x="576" y="24" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hxtGYY4TEeGenLMCoe7KWQ" type="2006">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hxtGYo4TEeGenLMCoe7KWQ" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hxtGY44TEeGenLMCoe7KWQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Log" href="VB_ID3450_ITBloodGasProductName.icxml#_hxtGaY4TEeGenLMCoe7KWQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hxtGZI4TEeGenLMCoe7KWQ" x="240" y="252" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_hxtGZY4TEeGenLMCoe7KWQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hxtGZo4TEeGenLMCoe7KWQ" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hxtGZ44TEeGenLMCoe7KWQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3450_ITBloodGasProductName.icxml#_hxtGbo4TEeGenLMCoe7KWQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hxtGaI4TEeGenLMCoe7KWQ" x="240" y="108" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Ym440Z97EeGPY-tYxKi6pA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ym440p97EeGPY-tYxKi6pA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ym440597EeGPY-tYxKi6pA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3450_ITBloodGasProductName.icxml#_Ym444Z97EeGPY-tYxKi6pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ym441J97EeGPY-tYxKi6pA" x="240" y="180" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Ym441Z97EeGPY-tYxKi6pA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ym441p97EeGPY-tYxKi6pA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ym441597EeGPY-tYxKi6pA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3450_ITBloodGasProductName.icxml#_Ym445p97EeGPY-tYxKi6pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ym442J97EeGPY-tYxKi6pA" x="348" y="264" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_UkDmA6TgEeG7n4Yh6jUDxQ" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UkDmBaTgEeG7n4Yh6jUDxQ" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UkDmBqTgEeG7n4Yh6jUDxQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3450_ITBloodGasProductName.icxml#_UkDmAKTgEeG7n4Yh6jUDxQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UkDmBKTgEeG7n4Yh6jUDxQ" x="108" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Vsxhk6TgEeG7n4Yh6jUDxQ" type="2024">
+    <children xmi:type="notation:DecorationNode" xmi:id="_VsxhlqTgEeG7n4Yh6jUDxQ" type="5024">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Vsxhl6TgEeG7n4Yh6jUDxQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_VsxhlKTgEeG7n4Yh6jUDxQ"/>
+    <element xmi:type="icxml:SubroutineCall" href="VB_ID3450_ITBloodGasProductName.icxml#_VsxhkKTgEeG7n4Yh6jUDxQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VsxhlaTgEeG7n4Yh6jUDxQ" x="240" y="24" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_L7AlkA4oEeKaCsGQlZgx1Q" type="2004">
+    <children xmi:type="notation:DecorationNode" xmi:id="_L7Alkg4oEeKaCsGQlZgx1Q" type="5004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_L7Alkw4oEeKaCsGQlZgx1Q" y="5"/>
+    </children>
+    <element xmi:type="icxml:Decision" href="VB_ID3450_ITBloodGasProductName.icxml#_L620kA4oEeKaCsGQlZgx1Q"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L7AlkQ4oEeKaCsGQlZgx1Q" x="576" y="108" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_SXxNoA4oEeKaCsGQlZgx1Q" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="_SXxNog4oEeKaCsGQlZgx1Q" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_SXxNow4oEeKaCsGQlZgx1Q" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3450_ITBloodGasProductName.icxml#_SXoDsA4oEeKaCsGQlZgx1Q"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SXxNoQ4oEeKaCsGQlZgx1Q" x="575" y="199"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Wr4uMw4oEeKaCsGQlZgx1Q" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Wr4uNg4oEeKaCsGQlZgx1Q" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Wr4uNw4oEeKaCsGQlZgx1Q" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_Wr4uNA4oEeKaCsGQlZgx1Q"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3450_ITBloodGasProductName.icxml#_Wr4uMA4oEeKaCsGQlZgx1Q"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Wr4uNQ4oEeKaCsGQlZgx1Q" x="576" y="276" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_J3shoxMYEeKGmJFMZREU0A" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_J3shphMYEeKGmJFMZREU0A" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_J3shpxMYEeKGmJFMZREU0A" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_J3shpBMYEeKGmJFMZREU0A"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3450_ITBloodGasProductName.icxml#_J3shoBMYEeKGmJFMZREU0A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J3shpRMYEeKGmJFMZREU0A" x="804" y="108" width="58" height="43"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_OCE5k2-UEeGtte0T2z7rbQ"/>
+  <element xmi:type="icxml:RootType" href="VB_ID3450_ITBloodGasProductName.icxml#_OCE5kW-UEeGtte0T2z7rbQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_BX1-MXKrEeG35bzrS-ychQ" type="4001" source="_6qoE0nKVEeG35bzrS-ychQ" target="___7wEXKqEeG35bzrS-ychQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BX1-NHKrEeG35bzrS-ychQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BX1-NXKrEeG35bzrS-ychQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_BX1-MnKrEeG35bzrS-ychQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_BX1-MHKrEeG35bzrS-ychQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BX1-M3KrEeG35bzrS-ychQ" points="[29, -1, -91, -1]$[90, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_EhTpgXKrEeG35bzrS-ychQ" type="4001" source="___7wEXKqEeG35bzrS-ychQ" target="_lg8qMI4REeGenLMCoe7KWQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EhTphHKrEeG35bzrS-ychQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EhTphXKrEeG35bzrS-ychQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_EhTpgnKrEeG35bzrS-ychQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_EhTpgHKrEeG35bzrS-ychQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EhTpg3KrEeG35bzrS-ychQ" points="[29, -5, -79, -5]$[107, -22, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_zhw0MXznEeGbO9u46mWIFg" type="4002" source="_6qoE0nKVEeG35bzrS-ychQ" target="_y0A9Y3znEeGbO9u46mWIFg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zh5-IHznEeGbO9u46mWIFg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zh5-IXznEeGbO9u46mWIFg" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zhw0MnznEeGbO9u46mWIFg"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_zhw0MHznEeGbO9u46mWIFg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zhw0M3znEeGbO9u46mWIFg" points="[-2, 22, -4, -58]$[1, 58, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_0Q2HwXznEeGbO9u46mWIFg" type="4001" source="_y0A9Y3znEeGbO9u46mWIFg" target="_9w8UkYpGEeGUwNmavaB-Zg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Q2HxHznEeGbO9u46mWIFg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0Q2HxXznEeGbO9u46mWIFg" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_0Q2HwnznEeGbO9u46mWIFg"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_0Q2HwHznEeGbO9u46mWIFg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0Q2Hw3znEeGbO9u46mWIFg" points="[-1, 22, -47, -60]$[16, 60, -30, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_hG3rkI4REeGenLMCoe7KWQ" type="4001" source="_dmdf4I4REeGenLMCoe7KWQ" target="_BVsOo3KWEeG35bzrS-ychQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hG3rk44REeGenLMCoe7KWQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hG3rlI4REeGenLMCoe7KWQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hG3rkY4REeGenLMCoe7KWQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_hGuhoI4REeGenLMCoe7KWQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hG3rko4REeGenLMCoe7KWQ" points="[29, -4, -79, -4]$[78, -22, -30, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_snIpwY4REeGenLMCoe7KWQ" type="4001" source="_lg8qMI4REeGenLMCoe7KWQ" target="_L7AlkA4oEeKaCsGQlZgx1Q">
+    <children xmi:type="notation:DecorationNode" xmi:id="_snIpxI4REeGenLMCoe7KWQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_snIpxY4REeGenLMCoe7KWQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_snIpwo4REeGenLMCoe7KWQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_snIpwI4REeGenLMCoe7KWQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_snIpw44REeGenLMCoe7KWQ" points="[2, -21, -10, 51]$[11, -94, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_hxtGc44TEeGenLMCoe7KWQ" type="4001" source="_hxtGZY4TEeGenLMCoe7KWQ" target="_Ym440Z97EeGPY-tYxKi6pA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hxtGdo4TEeGenLMCoe7KWQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hxtGd44TEeGenLMCoe7KWQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hxtGdI4TEeGenLMCoe7KWQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_hxtGco4TEeGenLMCoe7KWQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hxtGdY4TEeGenLMCoe7KWQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_liDykY4TEeGenLMCoe7KWQ" type="4001" source="_hxtGYY4TEeGenLMCoe7KWQ" target="_43TGA3KVEeG35bzrS-ychQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_liDylI4TEeGenLMCoe7KWQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_liDylY4TEeGenLMCoe7KWQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_liDyko4TEeGenLMCoe7KWQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_liDykI4TEeGenLMCoe7KWQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_liDyk44TEeGenLMCoe7KWQ" points="[-4, 22, -4, -50]$[-30, 50, -30, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Ux1EsY4VEeGenLMCoe7KWQ" type="4001" source="_9w8UkYpGEeGUwNmavaB-Zg" target="_Ym441Z97EeGPY-tYxKi6pA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ux1EtI4VEeGenLMCoe7KWQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ux1EtY4VEeGenLMCoe7KWQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Ux1Eso4VEeGenLMCoe7KWQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_Ux1EsI4VEeGenLMCoe7KWQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ux1Es44VEeGenLMCoe7KWQ" points="[29, -1, -163, -1]$[162, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_eu7OEZ97EeGPY-tYxKi6pA" type="4001" source="_Ym440Z97EeGPY-tYxKi6pA" target="_hxtGYY4TEeGenLMCoe7KWQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_eu7OFJ97EeGPY-tYxKi6pA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_eu7OFZ97EeGPY-tYxKi6pA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_eu7OEp97EeGPY-tYxKi6pA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_eu7OEJ97EeGPY-tYxKi6pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eu7OE597EeGPY-tYxKi6pA" points="[2, 22, 2, -50]$[-1, 50, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_oYH88J97EeGPY-tYxKi6pA" type="4001" source="_Ym441Z97EeGPY-tYxKi6pA" target="__PIKw3KVEeG35bzrS-ychQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oYH88597EeGPY-tYxKi6pA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_oYH89J97EeGPY-tYxKi6pA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_oYH88Z97EeGPY-tYxKi6pA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_oX-L8J97EeGPY-tYxKi6pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oYH88p97EeGPY-tYxKi6pA" points="[8, 22, 8, -38]$[29, 38, 29, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_U2YsIKTgEeG7n4Yh6jUDxQ" type="4001" source="_OCE5nW-UEeGtte0T2z7rbQ" target="_UkDmA6TgEeG7n4Yh6jUDxQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_U2YsI6TgEeG7n4Yh6jUDxQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_U2YsJKTgEeG7n4Yh6jUDxQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_U2YsIaTgEeG7n4Yh6jUDxQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_U2O7IKTgEeG7n4Yh6jUDxQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U2YsIqTgEeG7n4Yh6jUDxQ" points="[29, -4, -61, -5]$[89, -21, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ZzUgMaTgEeG7n4Yh6jUDxQ" type="4001" source="_UkDmA6TgEeG7n4Yh6jUDxQ" target="_Vsxhk6TgEeG7n4Yh6jUDxQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZzUgNKTgEeG7n4Yh6jUDxQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ZzUgNaTgEeG7n4Yh6jUDxQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZzUgMqTgEeG7n4Yh6jUDxQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_ZzUgMKTgEeG7n4Yh6jUDxQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZzUgM6TgEeG7n4Yh6jUDxQ" points="[29, -2, -104, 0]$[162, -24, 29, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_dewQIaTgEeG7n4Yh6jUDxQ" type="4002" source="_Vsxhk6TgEeG7n4Yh6jUDxQ" target="_6qoE0nKVEeG35bzrS-ychQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_dewQJKTgEeG7n4Yh6jUDxQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_dewQJaTgEeG7n4Yh6jUDxQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_dewQIqTgEeG7n4Yh6jUDxQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_dewQIKTgEeG7n4Yh6jUDxQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dewQI6TgEeG7n4Yh6jUDxQ" points="[29, -3, -79, -3]$[78, -22, -30, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_edyrQKTgEeG7n4Yh6jUDxQ" type="4002" source="_Vsxhk6TgEeG7n4Yh6jUDxQ" target="_hxtGZY4TEeGenLMCoe7KWQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_edyrQ6TgEeG7n4Yh6jUDxQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_edyrRKTgEeG7n4Yh6jUDxQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_edyrQaTgEeG7n4Yh6jUDxQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_edo6QKTgEeG7n4Yh6jUDxQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_edyrQqTgEeG7n4Yh6jUDxQ" points="[2, 22, 2, -62]$[29, 62, 29, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_THv5EA4oEeKaCsGQlZgx1Q" type="4002" source="_L7AlkA4oEeKaCsGQlZgx1Q" target="_SXxNoA4oEeKaCsGQlZgx1Q">
+    <children xmi:type="notation:DecorationNode" xmi:id="_THv5Ew4oEeKaCsGQlZgx1Q" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_THv5FA4oEeKaCsGQlZgx1Q" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_THv5EQ4oEeKaCsGQlZgx1Q"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_THmvIA4oEeKaCsGQlZgx1Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_THv5Eg4oEeKaCsGQlZgx1Q" points="[-2, 22, -1, -69]$[-2, 69, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_XC-_kQ4oEeKaCsGQlZgx1Q" type="4001" source="_SXxNoA4oEeKaCsGQlZgx1Q" target="_Wr4uMw4oEeKaCsGQlZgx1Q">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XC-_lA4oEeKaCsGQlZgx1Q" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XC-_lQ4oEeKaCsGQlZgx1Q" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_XC-_kg4oEeKaCsGQlZgx1Q"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_XC-_kA4oEeKaCsGQlZgx1Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XC-_kw4oEeKaCsGQlZgx1Q" points="[2, 22, -4, -58]$[5, 102, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Zt5tsQ4oEeKaCsGQlZgx1Q" type="4001" source="_L7AlkA4oEeKaCsGQlZgx1Q" target="_dmdf4I4REeGenLMCoe7KWQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Zt5ttA4oEeKaCsGQlZgx1Q" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Zt5ttQ4oEeKaCsGQlZgx1Q" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Zt5tsg4oEeKaCsGQlZgx1Q"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_Zt5tsA4oEeKaCsGQlZgx1Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Zt5tsw4oEeKaCsGQlZgx1Q" points="[29, -21, -79, 63]$[107, -62, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_K0pSERMYEeKGmJFMZREU0A" type="4002" source="_L7AlkA4oEeKaCsGQlZgx1Q" target="_J3shoxMYEeKGmJFMZREU0A">
+    <children xmi:type="notation:DecorationNode" xmi:id="_K0pSFBMYEeKGmJFMZREU0A" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_K0pSFRMYEeKGmJFMZREU0A" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_K0pSEhMYEeKGmJFMZREU0A"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3450_ITBloodGasProductName.icxml#_K0pSEBMYEeKGmJFMZREU0A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_K0pSExMYEeKGmJFMZREU0A" points="[29, -1, -86, -1]$[85, -22, -30, -22]"/>
+  </edges>
+</notation:Diagram>

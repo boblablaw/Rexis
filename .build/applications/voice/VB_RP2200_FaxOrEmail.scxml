@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 11:14:41.607 GMT-4--><!--Note: Components marked as 'debug' have not been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="blockEntry_vipsol"/>
+      </state>
+      <datamodel><!--Variables from declaration block: _bSB39HNeEeG35bzrS-ychQ--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+         <data name="intv_noFieldsInitialized" expr="undefined"/>
+         <data name="intv_allFieldsInitialized" expr="undefined"/>
+         <data name="intv_atLeastOneSituationExecuted" expr="undefined"/>
+         <data name="intv_modalities" expr="undefined"/>
+         <data name="result" expr="undefined"/>
+         <data name="dummy" expr="undefined"/>
+      </datamodel>
+      <state id="blockEntry_vipsol">
+         <onentry>
+            <icview:log text="action=entry, type=BlockEntry, name=, id=blockEntry_vipsol, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=BlockEntry, name=, id=blockEntry_vipsol, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="script_bojwij"/>
+      </state>
+      <state id="script_bojwij">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_bojwij, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP2200_FaxOrEmail.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_bojwij, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_vezcas"/>
+      </state>
+      <state id="subroutineCall_vezcas">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/VoiceModule/subroutines/voice/VoiceModule.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_vezcas, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml">
+               <icview:param name="vm" expr="_ws.vm"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_vezcas, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/VoiceModule/subroutines/voice/VoiceModule.scxml">
+            <param name="vm" expr="_ws.vm"/>
+         </invoke>
+         <transition event="subroutineCall_vezcas.invoke.done"/>
+         <transition event="Success" target="case_hifvib">
+            <assign location="result" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:Success, type=SubroutineCall, name=, id=subroutineCall_vezcas, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml">
+               <icview:result name="resultVariable" expr="result"/>
+            </icview:log>
+         </transition>
+         <transition event="Error" target="calc_gedbos">
+            <assign location="result" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:Error, type=SubroutineCall, name=, id=subroutineCall_vezcas, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml">
+               <icview:result name="resultVariable" expr="result"/>
+            </icview:log>
+         </transition>
+      </state>
+      <state id="goToBlock_nuzloy">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_nuzloy, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_nuzloy, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="case_hifvib">
+         <datamodel>
+            <data expr="false" name="case_expr_case_hifvib"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=Case, name=GLOBAL, id=case_hifvib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml">
+               <icview:param name="TSS" value="'representative'"/>
+            </icview:log>
+            <assign location="case_expr_case_hifvib" expr="result.result.GLOBAL"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Case, name=GLOBAL, id=case_hifvib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="case_expr_case_hifvib == 'representative'" target="if_pozruv">
+            <icview:log text="action=leg:TSS, type=Case, name=GLOBAL, id=case_hifvib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+         <transition cond="true" target="calc_qorbiw">
+            <icview:log text="action=leg:default, type=Case, name=GLOBAL, id=case_hifvib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_cofvem">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_cofvem, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_cofvem, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="goToBlock_picwid">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP2250_FaxNumber.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_picwid, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_picwid, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="case_zotbog">
+         <datamodel>
+            <data expr="false" name="case_expr_case_zotbog"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=Case, name=CHOICE, id=case_zotbog, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml">
+               <icview:param name="Fax" value="'fax'"/>
+            </icview:log>
+            <assign location="case_expr_case_zotbog" expr="result.result.CHOICE"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Case, name=CHOICE, id=case_zotbog, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="case_expr_case_zotbog == 'fax'" target="goToBlock_picwid">
+            <icview:log text="action=leg:Fax, type=Case, name=CHOICE, id=case_zotbog, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+         <transition cond="true" target="goToBlock_qahleq">
+            <icview:log text="action=leg:default, type=Case, name=CHOICE, id=case_zotbog, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_qahleq">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9000_AllInfoCollected.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_qahleq, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_qahleq, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="script_lelkes">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_lelkes, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP2200_FaxOrEmail_representative_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_lelkes, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="log_kudmiq"/>
+      </state>
+      <state id="log_kudmiq">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_kudmiq, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <log expr="'EVENT - Customer asked for Agent or Pressed 0'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_kudmiq, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_toldug">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_kudmiq, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_qorbiw">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_qorbiw, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="_ws.deliveryType" expr="result.result.CHOICE"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_qorbiw, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true">
+               <icview:result name="_ws.deliveryType" expr="_ws.deliveryType"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_lupxoy">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_lupxoy">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_lupxoy, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <log expr="'EVENT: Delivery Type Successful.  Delivery Type: ' + _ws.deliveryType"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_lupxoy, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="case_zotbog">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_lupxoy, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_gedbos">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_gedbos, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="_ws.deliveryType" expr="'ERROR'"/>
+            <assign location="dummy" expr="_ws.gateKeeper.setString(&#34;TransferReason&#34;,&#34;MaxErrors&#34;)"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_gedbos, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true">
+               <icview:result name="_ws.deliveryType" expr="_ws.deliveryType"/>
+               <icview:result name="dummy" expr="dummy"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_zaygib">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_zaygib">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_zaygib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <log expr="'EVENT: Delivery Type Successful.  Delivery Type: ' + _ws.deliveryType"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_zaygib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_sivmoc">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_zaygib, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="if_pozruv">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_pozruv, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml">
+               <icview:param name="ContinueTransfer" value="_ws.gateKeeper.getBoolean(&#34;GotProductName&#34;)"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_pozruv, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.gateKeeper.getBoolean(&#34;GotProductName&#34;)" target="script_lelkes">
+            <icview:log text="action=leg:ContinueTransfer, type=If, name=, id=if_pozruv, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+         <transition cond="true" target="script_yednot">
+            <icview:log text="action=leg:default, type=If, name=, id=if_pozruv, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_xiqleh">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_ID3300_DNISCheck.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_xiqleh, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_xiqleh, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="script_yednot">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_yednot, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP2200_FaxOrEmail_representative_ACTION_2.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_yednot, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="log_korjob"/>
+      </state>
+      <state id="log_korjob">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_korjob, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <log expr="'EVENT - Customer asked for Agent or Pressed 0'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_korjob, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_ziykey">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_korjob, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_toldug">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_toldug, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' - Fax or Email caller asked for operator'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_toldug, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_cofvem">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_ziykey">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_ziykey, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' - Fax or Email caller asked for operator need product name'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_ziykey, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_xiqleh">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_sivmoc">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_sivmoc, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' -Fax or Email max Speech Reco errors'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_sivmoc, document=/RocheRPS_Rexis/applications/voice/VB_RP2200_FaxOrEmail.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_nuzloy">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

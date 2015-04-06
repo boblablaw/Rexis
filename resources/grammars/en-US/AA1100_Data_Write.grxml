@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<grammar mode='voice' root='root' version='1.0'
+xml:lang='en-US' xmlns='http://www.w3.org/2001/06/grammar' tag-format='semantics/1.0'>
+	
+<!-- ############################################## -->
+	
+<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	
+<meta name="Language" content="en-us" />
+	
+<meta name="Description" content="MainMenu" />
+	
+<meta name="ASR_Version" content="9.x" />
+	
+<!-- ############################################## -->
+
+
+<rule id="root" scope="public">
+<item>
+<one-of>
+		
+	<item>one<tag>out.CHOICE='one' </tag></item>
+	<item>two<tag>out.CHOICE='two' </tag></item>
+			
+</one-of>
+</item>
+</rule>
+
+</grammar>
+
+
+

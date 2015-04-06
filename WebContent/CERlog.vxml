@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<vxml version="2.0" xmlns="http://www.w3.org/2001/vxml">
+
+<form id="CERLog">
+   <var name="checkpointCD"/>
+   <var name="errorCD"/>
+   <var name="analysisCD"/>
+   <var name="redirectedToAddress"/>
+   <var name="responseText"/>
+   <var name="userDefined1"/>
+   <var name="userDefined2"/>
+   <var name="userDefined3"/>
+   
+   <block cond="typeof(session.connection.ccxml.values.SIR) == 'object'">
+      <log label="IVB_HISTORY"><value expr="'WRITING CER LOG'"/></log>
+
+	  <script>
+	   var delim = session.connection.ccxml.values.SIR.delim;
+	   var systemID = session.connection.ccxml.values.SIR.system_id;
+	   var sessionID = session.connection.ccxml.values.SIR.session_id;
+	   var startTime=getFormattedDateTime(session.connection.ccxml.values.SIR.start_utc_tm);
+	   // checkpointCD --> is passed in through subdialog param
+	   if (checkpointCD == undefined) 
+			checkpointCD = "";
+	   var checkpointUTCTm=getFormattedDateTime(new Date());
+	   var location=session.connection.ccxml.values.SIR.location_cd;
+	   var customerID = session.connection.ccxml.values.SIR.customer_id;
+	   // errorCD : is passed in through subdialog param
+	   if (errorCD == undefined) 
+			errorCD = "";
+	   // analysisCD : is passed in through subdialog param
+	   if (analysisCD == undefined) 
+			analysisCD = "";
+	   // redirectedToAddress : is passed in through subdialog param
+	   if (redirectedToAddress == undefined) 
+			redirectedToAddress = "";
+	   // responseText : is passed in through subdialog param
+	   if (responseText == undefined) 
+			responseText = "";
+	   // userDefined1 : is passed in through subdialog param
+	   if (userDefined1 == undefined) 
+			userDefined1 = "";
+	   // userDefined2 : is passed in through subdialog param
+	   if (userDefined2 == undefined) 
+			userDefined2 = "";
+	   // userDefined3 : is passed in through subdialog param
+	   if (userDefined3 == undefined) 
+			userDefined3 = "";
+	  </script>
+
+	  <log file="d:/appl/SIR/cer101001.log"><value expr="logString(delim, systemID, sessionID, startTime, checkpointCD, checkpointUTCTm, customerID, location,  errorCD, analysisCD, redirectedToAddress, responseText, userDefined1, userDefined2, userDefined3)" /></log>
+	  <return/>
+   </block>
+   <block>
+      <log label="IVB_HISTORY"><value expr="'NOT A CPT APPLICATION'"/></log>
+      <return />
+   </block>
+</form>
+
+<script><![CDATA[
+function getFormattedDateTime(aDate) {
+  if (aDate == '') {
+     return '';
+   }
+  return getFormattedDate(aDate) + " " + getFormattedTime(aDate);
+}
+
+function getFormattedDate(aDate) {
+  return (aDate.getUTCMonth() + 1) +"/"+aDate.getUTCDate()+ "/"+aDate.getUTCFullYear();
+}
+function getFormattedTime(aDate) {
+
+var Hours;
+var Mins;
+var Secs;
+Hours = aDate.getUTCHours();
+Mins = aDate.getUTCMinutes();
+Secs = aDate.getUTCSeconds();
+
+if (Mins < 10) {
+Mins = "0" + Mins;
+}
+if (Secs < 10) {
+Secs = "0" + Secs;
+}
+return  Hours + ":" + Mins + ":" + Secs;
+}
+
+function logString() {
+    var returnString = "";
+	var delim = arguments[0];
+	var i = 1;
+	for (var j = 1; j < arguments.length - 1; j++ ) {
+		returnString += arguments[j] + delim;
+		i++;
+	}
+    returnString += arguments[i];
+    return returnString;
+}
+]]></script>
+
+</vxml>

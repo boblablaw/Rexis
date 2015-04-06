@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<grammar mode='voice' root='root' version='1.0'
+xml:lang='en-US' xmlns='http://www.w3.org/2001/06/grammar' tag-format='semantics/1.0'>
+
+	<!--  
+		Generic confirmation grammar, suitable for use with:
+		"I heard... is that right?"
+			or 
+		"I heard you say... is that the one?"  
+	 -->
+	<rule id="root" scope='public'> 
+		<item>
+			<one-of>
+				<item>yes<tag>out.CHOICE='yes';</tag></item>
+				<!-- item><ruleref uri="yesno.grxml#yesBasic"/><tag>CHOICE='yes';</tag></item>
+				<item><ruleref uri="yesno.grxml#yesThatsRight"/><tag>CHOICE='yes';</tag></item>
+				<item><ruleref uri="yesno.grxml#right"/><tag>CHOICE='yes';</tag></item>
+				<item><ruleref uri="yesno.grxml#yesItIs"/><tag>CHOICE='yes';</tag></item-->
+				
+				<item>no<tag>out.CHOICE='no';</tag></item>
+				<!--item><ruleref uri="yesno.grxml#noBasic"/><tag>CHOICE='no';</tag></item>
+				<item><ruleref uri="yesno.grxml#noThatsWrong"/><tag>CHOICE='no';</tag></item>
+				<item><ruleref uri="yesno.grxml#noItIsnt"/><tag>CHOICE='no';</tag></item -->
+			</one-of>
+		</item>
+	</rule>
+</grammar>

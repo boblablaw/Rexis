@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="ID3600_ModularDisambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_en-US.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+  	
+	<one-of>
+		        
+        
+        <item> 
+            <one-of>
+			<item>core</item>
+			<item>modular i s e</item> <!-- Tuning Update DIR 09/12/12 -->
+            </one-of>
+          
+			<tag>CHOICE='core'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>modular d</item>
+            </one-of>
+          
+			<tag>CHOICE='modulard'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>modular p</item>
+			<item>p analyzer</item> <!-- Tuning Update DIR 09/12/12 -->
+            </one-of>
+          
+			<tag>CHOICE='modularp'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>modular e one seventy</item>
+			<item>modular e one seven</item> <!-- Tuning Update DIR 09/12/12 -->
+			<item>e one seven</item> <!-- Tuning Update DIR 09/12/12 -->
+            </one-of>
+          
+			<tag>CHOICE='modulare170'</tag>
+		</item>
+       
+        
+ </one-of>
+</rule>
+
+</grammar>

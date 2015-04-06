@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sim:Simulate xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sim="http://www.intervoice.com/icad/simulate" version="1.0.0.0">
+  <components>
+    <component id="play_kelkeh" type="Play"/>
+    <component id="subroutineCall_cuhvev" type="SubroutineCall"/>
+    <component id="subroutineCall_qokkiv" type="SubroutineCall"/>
+    <component id="subroutineCall_relves" type="SubroutineCall"/>
+    <component id="subroutineCall_nojnus" type="SubroutineCall"/>
+    <component id="subdialog_huhsol" type="Subdialog"/>
+    <component id="subdialog_tewxer" type="Subdialog"/>
+    <component id="play_besjeg" type="Play"/>
+    <component id="subroutineCall_xinlab" type="SubroutineCall"/>
+    <component id="play_bigder" type="Play"/>
+    <component id="play_yabhek" type="Play"/>
+  </components>
+  <groups selected="Default">
+    <group name="Default" locked="false"/>
+  </groups>
+</sim:Simulate>

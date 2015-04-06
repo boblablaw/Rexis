@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="RP2300_LotNumber grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+
+<rule id="root" scope="public">
+  	
+	<one-of>
+		        
+        
+        <item> 
+            <one-of>
+			<item><ruleref uri="#lotNumber"/><tag>DATA=lotNumber.VALUE</tag></item>
+            </one-of>
+          
+			<tag>CHOICE='lotnumber'</tag>
+		</item>
+       
+        
+ </one-of>
+</rule>
+
+
+<rule id="lotNumber" scope="private">
+	<one-of>
+		<item><ruleref uri="#alphaNum9"/><tag>VALUE=alphaNum9.VALUE</tag></item>
+		<item><ruleref uri="#alphaNum6"/><tag>VALUE=alphaNum6.VALUE</tag></item>
+		<item><ruleref uri="#alphaNum7"/><tag>VALUE=alphaNum7.VALUE</tag></item>
+	</one-of>
+</rule>
+
+<rule id="alphaNum9" scope="private">	
+	<tag>VALUE='';</tag>
+	<item repeat="2"> <ruleref uri="#digit"/><tag>VALUE=VALUE+digit.VALUE</tag></item>
+	<item repeat="2"> <ruleref uri="#letter"/><tag>VALUE=VALUE+letter.VALUE</tag></item>
+	<item repeat="5"> <ruleref uri="#digit"/><tag>VALUE=VALUE+digit.VALUE</tag></item>
+</rule>		
+
+<rule id="alphaNum6" scope="private">	
+	<tag>VALUE='';</tag>
+	<item><ruleref uri="#letter"/><tag>VALUE=VALUE+letter.VALUE</tag></item>
+	<item repeat="5"> <ruleref uri="#digit"/><tag>VALUE=VALUE+digit.VALUE</tag></item>
+</rule>
+
+<rule id="alphaNum7" scope="private">	
+	<tag>VALUE='';</tag>
+	<item><ruleref uri="#letter"/><tag>VALUE=VALUE+letter.VALUE</tag></item>
+	<item repeat="5"> <ruleref uri="#digit"/><tag>VALUE=VALUE+digit.VALUE</tag></item>
+	<item><ruleref uri="#letter"/><tag>VALUE=VALUE+letter.VALUE</tag></item>
+</rule>
+		
+<rule id="digit" scope="private">
+	<one-of>
+		<item> one 		<tag>VALUE='1'</tag></item>
+		<item> two 		<tag>VALUE='2'</tag></item>
+		<item> three 	<tag>VALUE='3'</tag></item>
+		<item> four 	<tag>VALUE='4'</tag></item>
+		<item> five 	<tag>VALUE='5'</tag></item>
+		<item> six 		<tag>VALUE='6'</tag></item>
+		<item> seven 	<tag>VALUE='7'</tag></item>
+		<item> eight 	<tag>VALUE='8'</tag></item>
+		<item> nine 	<tag>VALUE='9'</tag></item>
+		<item> zero 	<tag>VALUE='0'</tag></item>
+		<item weight="0.001"> oh <tag>VALUE='0'</tag></item>
+	</one-of>
+</rule>
+
+<rule id="letter" scope="private">
+	<one-of>
+		<item> a <tag>VALUE='A'</tag></item>
+		<item> b <tag>VALUE='B'</tag></item>
+		<item> c <tag>VALUE='C'</tag></item>
+		<item> d <tag>VALUE='D'</tag></item>
+		<item> e <tag>VALUE='E'</tag></item>
+		<item> f <tag>VALUE='F'</tag></item>
+		<item> g <tag>VALUE='G'</tag></item>
+		<item> h <tag>VALUE='H'</tag></item>
+		<item> i <tag>VALUE='I'</tag></item>
+		<item> j <tag>VALUE='J'</tag></item>
+		<item> k <tag>VALUE='K'</tag></item>
+		<item> l <tag>VALUE='L'</tag></item>
+		<item> m <tag>VALUE='M'</tag></item>
+		<item> n <tag>VALUE='N'</tag></item>
+		<item> o <tag>VALUE='O'</tag></item>
+		<item> p <tag>VALUE='P'</tag></item>
+		<item> q <tag>VALUE='Q'</tag></item>
+		<item> r <tag>VALUE='R'</tag></item>
+		<item> s <tag>VALUE='S'</tag></item>
+		<item> t <tag>VALUE='T'</tag></item>
+		<item> u <tag>VALUE='U'</tag></item>
+		<item> v <tag>VALUE='V'</tag></item>
+		<item> w <tag>VALUE='W'</tag></item>
+		<item> x <tag>VALUE='X'</tag></item>
+		<item> y <tag>VALUE='Y'</tag></item>
+		<item> z <tag>VALUE='Z'</tag></item>
+	</one-of>
+</rule>
+		
+</grammar>

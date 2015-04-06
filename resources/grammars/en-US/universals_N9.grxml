@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+	xml:lang="en-US" 
+	mode="voice" 
+	root="root">
+
+	<!-- IVR platform: any -->
+	<!-- Speech platform: Nuance9.x -->
+	<!-- Language: en-US -->
+	<!-- Mode: voice -->
+	<!-- Required files: none -->
+	<!-- Returns: GLOBAL -->
+	<!-- Updated: 5/2009 - formatting-->
+
+	<!-- ######################################### -->	
+	<!-- USAGE:
+		This grammar contains various universal rules
+        Some rules may have different returns based design.
+        All rules other than operator are deweighted.
+        GLOBAl is returned
+		-->
+		
+	<!-- ######################################### -->
+	
+	<rule id="root" scope="public">
+		<item>
+			<one-of>
+				<!--<item><ruleref uri="#backup"/><tag>GLOBAL=backup.GLOBAL</tag></item>-->
+				<!--<item><ruleref uri="#cancel"/><tag>GLOBAL=cancel.GLOBAL</tag></item>-->
+				<!--<item><ruleref uri="#goodbye"/><tag>GLOBAL=goodbye.GLOBAL</tag></item>-->
+				<!--<item><ruleref uri="#mainMenu"/><tag>GLOBAL=mainMenu.GLOBAL</tag></item>-->
+				<!--<item><ruleref uri="#repeat"/><tag>GLOBAL=repeat.GLOBAL</tag></item>-->
+				<!--<item><ruleref uri="#startOver"/><tag>GLOBAL=startOver.GLOBAL</tag></item>-->
+				<!--<item><ruleref uri="#tellMeMore"/><tag>GLOBAL=tellMeMore.GLOBAL</tag></item>-->
+				<item><ruleref uri="#representative"/><tag>GLOBAL=representative.GLOBAL</tag></item>
+        <!--help should only be added if the design requires it-->
+        <!--<item weight="0.01"><ruleref uri="#help"/><tag>GLOBAL=help.GLOBAL</tag></item>-->				
+			</one-of>
+		</item>
+	</rule>
+<!-- ___________________________________________________________________________________________________ -->	
+	<rule id="backup" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<!--removed per tuning-->
+                <!--<item>back </item>-->
+				<item>back up</item>
+				<item>go back</item>
+				<item>previous</item>
+			</one-of>
+			<item repeat="0-1">please</item>
+			
+			<tag>GLOBAL='backup'</tag>
+		</item>
+	</rule>
+	
+
+<!-- ___________________________________________________________________________________________________ -->	
+<!--depending on design, cancel may map to start-over or main menu-->
+<rule id="cancel" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<item>cancel</item>
+				<item>cancel it</item>
+			</one-of>
+			<item repeat="0-1">please</item>
+			
+			<tag>GLOBAL='cancel'</tag>
+		</item>
+	</rule>
+<!-- ___________________________________________________________________________________________________ -->	
+<!--'bye' intentionlly excluded-->
+<rule id="goodbye" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+                <!--removed per tuning-->
+                <!--<item>bye </item>-->
+				<item>goodbye</item>
+				<item>good goodbye</item>
+				<item>thanks goodbye</item>
+				<item>thank you goodbye</item>
+				<item>no goodbye</item>
+            </one-of>
+			<tag>GLOBAL='goodbye'</tag>
+		</item>
+	</rule>	
+<!-- ___________________________________________________________________________________________________ -->	
+<!--help should ONLY be used if the design calls for it-->
+<!--help is sometimes mapped to agent-->
+<!--deweighting recommended-->
+
+<!--	<rule id="help" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+-->
+				<!--removed per tuning-->
+                <!--<item>help</item>-->
+<!--				<item>help me</item>
+				<item>i need help</item>
+			</one-of>
+			<item repeat="0-1">please</item>
+			
+			<tag>GLOBAL='help'</tag>
+		</item>
+	</rule>
+-->
+	
+<!-- ___________________________________________________________________________________________________ -->		
+<rule id="mainMenu" scope="public">
+<item>
+	<item repeat="0-1"><ruleref uri="#umUh"/></item>
+	<one-of>
+		<item>
+			<item repeat="0-1"><ruleref uri="#goTo"/></item>
+			<item>main menu</item>
+		</item>
+		<item>
+			<item>main main menu</item>
+		</item>
+	</one-of>
+	<item repeat="0-1">please</item>
+				
+	<tag>GLOBAL='mainmenu'</tag>
+</item>
+</rule>
+	
+<!-- ___________________________________________________________________________________________________ -->		
+<rule id="repeat" scope="public">
+<item>
+	<item repeat="0-1"><ruleref uri="#umUh"/></item>
+	<one-of>
+		<item weight="0.01">repeat</item>
+		<item>repeat repeat</item>
+        <item>repeat that</item>
+        <item>repeat it</item>
+		<item>say again</item>
+		<item>say that again</item>
+	
+	</one-of>
+	<item repeat="0-1">please</item>
+				
+	<tag>GLOBAL='repeat'</tag>
+</item>
+</rule>
+
+<!-- ___________________________________________________________________________________________________ -->		
+<!--startover is often combined with mainmenu-->
+<rule id="startOver" scope="public">
+<item>
+	<item repeat="0-1"><ruleref uri="#umUh"/></item>
+	<one-of>
+		<item>start over</item>
+		<item>start start over</item>
+		<item>i want to start over</item>
+		<item>i need to start over</item>
+	</one-of>
+	<item repeat="0-1">please</item>
+				
+	<tag>GLOBAL='startover'</tag>
+</item>
+</rule>
+
+<!-- ___________________________________________________________________________________________________ -->		
+<rule id="representative" scope="public">
+<item>
+	<item repeat="0-1"><ruleref uri="#umUh"/></item>
+	<one-of>
+	<!-- individual items (with hesitations and stutters) -->
+		<item weight ="0.01">agent</item>
+		<item>agent agent</item>
+		<item weight ="0.01">operator</item>
+		<item>operator operator</item>
+		<item>a live person</item>
+		<item>a real person</item>
+		<item>a person</item>
+		<item>a human</item>
+		<item>a human being</item>
+        <item>representative</item>
+		<item>rep representative</item>
+		<item>customer service</item>
+		<item>cust customer service</item>
+		<item>customer service agent</item>
+		<item>customer service operator</item>
+		<item>customer service rep</item>
+		<item>customer service representative</item>
+		<item>specialist</item>
+		<item>support specialist</item>
+		
+		
+		<!-- speak items -->
+		<item><ruleref uri='#speakTo' />an operator</item>
+		<item><ruleref uri='#speakTo' />the operator</item>
+		<item><ruleref uri='#speakTo' /> an agent</item>
+		<item><ruleref uri='#speakTo' /> someone</item>
+		<item><ruleref uri='#speakTo' /> a person</item>
+		<item><ruleref uri='#speakTo' /> a live person</item>
+		<item><ruleref uri='#speakTo' /> a real person</item>
+		<item><ruleref uri='#speakTo' /> a human</item>
+		<item><ruleref uri='#speakTo' /> a human being</item>
+        <item><ruleref uri='#speakTo' /> a representative</item>
+		<item><ruleref uri='#speakTo' /> a rep</item>
+		<item><ruleref uri='#speakTo' /> customer service</item>
+		<item><ruleref uri='#speakTo' /> a customer service agent</item>
+		<item><ruleref uri='#speakTo' /> a customer service representative</item>
+		<item><ruleref uri='#speakTo' /> a customer service rep</item>
+		<item><ruleref uri='#speakTo' /> a specialist</item>
+		<item><ruleref uri='#speakTo' /> a support specialist</item>
+		<!-- want items -->
+		<item><ruleref uri='#want' /> an operator</item>
+		<item><ruleref uri='#want' /> the operator</item>
+		<item><ruleref uri='#want' /> an agent</item>
+		<item><ruleref uri='#want' /> someone</item>
+		<item><ruleref uri='#want' /> a person</item>
+		<item><ruleref uri='#want' /> a live person</item>
+		<item><ruleref uri='#want' /> a real person</item>
+		<item><ruleref uri='#want' /> a human</item>
+		<item><ruleref uri='#want' /> a human being</item>
+        <item><ruleref uri='#want' /> a representative</item>
+		<item><ruleref uri='#want' /> a rep</item>
+		<item><ruleref uri='#want' /> customer service</item>
+		<item><ruleref uri='#want' /> a customer service agent</item>
+		<item><ruleref uri='#want' /> a customer service representative</item>
+		<item><ruleref uri='#want' /> a customer service rep</item>
+		<item><ruleref uri='#want' /> a specialist</item>
+		<item><ruleref uri='#want' /> a support specialist</item>
+
+ 
+	</one-of>
+	<item repeat="0-1">please</item>
+				
+	<tag>GLOBAL='representative'</tag>
+</item>
+</rule>
+
+<!-- ___________________________________________________________________________________________________ -->		
+<!--tellmemore is often a replacement for help-->
+<rule id="tellMeMore" scope="public">
+<item>
+	<item repeat="0-1"><ruleref uri="#umUh"/></item>
+	<one-of>
+		<item>tell me more</item>
+		<item>tell tell me more</item>
+	</one-of>
+	<item repeat="0-1">please</item>
+				
+	<tag>GLOBAL='tellmemore'</tag>
+</item>
+</rule>
+<!-- ___________________________________________________________________________________________________ -->		
+<!--helper pieces-->
+<!-- ___________________________________________________________________________________________________ -->		
+
+<rule id="goTo" scope="public">
+<item>
+	<one-of>
+		<item>return to the</item>
+		<item>go back to the</item>
+		<item>go to the</item>
+		<item>take me to the</item>
+		<item>take me back to the</item>
+	</one-of>
+</item>
+</rule>
+
+<!-- ___________________________________________________________________________________________________ -->
+<rule id="speakTo" scope="public">
+<item>
+	<item repeat="0-1"><ruleref uri="#wantToSpeak"/></item>
+	<one-of>
+		<item>speak to </item>
+		<item>speak with </item>
+		<item>talk to </item>
+		<item>talk with </item>
+	</one-of>
+</item>
+</rule>
+
+<!-- ___________________________________________________________________________________________________ -->
+<rule id="wantToSpeak" scope="public">
+<item>
+	<one-of>
+		<item>i want to </item>
+		<item>want to </item>
+		<item>i would like to </item>
+		<item>i'd like to </item>
+		<item>let me </item>
+		<item>can i </item>
+		<item>may i </item>
+		<item>i need to </item>
+		<item>need to </item>
+	</one-of>
+	
+</item>
+</rule>
+
+<!-- ___________________________________________________________________________________________________ -->
+<rule id="want" scope="public">
+<item>
+	<one-of>
+		<item>i want  </item>
+		<item>i need  </item>
+		<item>want  </item>
+		<item>need  </item>
+		<item>i would like</item>
+		<item>i'd like</item>
+		<item>give me</item>
+		<item>get me</item>
+		<item>get me to </item>
+		<item>transfer me to</item>
+        
+	</one-of>
+</item>
+<!-- ___________________________________________________________________________________________________ -->
+</rule>
+	
+		<rule id="umUh" scope="public">
+		<one-of>
+			<item>uh</item>
+			<item>um</item>
+			<item>ah</item>
+		</one-of>
+	</rule>
+	
+	
+</grammar>

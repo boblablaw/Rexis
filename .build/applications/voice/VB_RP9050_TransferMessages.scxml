@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 11:19:25.539 GMT-4--><!--Note: Components marked as 'debug' have not been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="blockEntry_cazqeg"/>
+      </state>
+      <datamodel><!--Variables from declaration block: _OPcHpG4JEeGikeqwP1_oxQ--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+         <data name="intv_noFieldsInitialized" expr="undefined"/>
+         <data name="intv_allFieldsInitialized" expr="undefined"/>
+         <data name="intv_atLeastOneSituationExecuted" expr="undefined"/>
+         <data name="intv_modalities" expr="undefined"/>
+         <data name="dummyResultVar" expr="undefined"/>
+         <data name="result" expr="undefined"/>
+         <data name="ctiRouteRequestResult" expr="undefined"/>
+         <data name="ctiAddUserDataResult" expr="undefined"/>
+      </datamodel>
+      <state id="blockEntry_cazqeg">
+         <onentry>
+            <icview:log text="action=entry, type=BlockEntry, name=, id=blockEntry_cazqeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=BlockEntry, name=, id=blockEntry_cazqeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="calc_poqtaw"/>
+      </state>
+      <state id="script_parvah">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_parvah, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP9050_TransferMessages.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_parvah, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_vuvraj"/>
+      </state>
+      <state id="subroutineCall_vuvraj">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/VoiceModule/subroutines/voice/PlayPromptSubroutine.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_vuvraj, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="promptConfig" expr="_ws.pl"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_vuvraj, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/VoiceModule/subroutines/voice/PlayPromptSubroutine.scxml">
+            <param name="promptConfig" expr="_ws.pl"/>
+         </invoke>
+         <transition event="subroutineCall_vuvraj.invoke.done"/>
+         <transition event="DONE" target="collect_guhgiz">
+            <icview:log text="action=leg:DONE, type=SubroutineCall, name=, id=subroutineCall_vuvraj, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition event="ERROR" target="collect_guhgiz">
+            <icview:log text="action=leg:ERROR, type=SubroutineCall, name=, id=subroutineCall_vuvraj, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="if_tapfap">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_tapfap, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="Agent" value="_ws.VDN_transfer == 'AGENT'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_tapfap, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.VDN_transfer == 'AGENT'" target="subroutineCall_dukhev">
+            <icview:log text="action=leg:Agent, type=If, name=, id=if_tapfap, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="if_poyvuh">
+            <icview:log text="action=leg:default, type=If, name=, id=if_tapfap, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="if_poyvuh">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_poyvuh, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="Open" value="_ws.SCC.isOpen()"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_poyvuh, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.SCC.isOpen()" target="calc_lenquy">
+            <icview:log text="action=leg:Open, type=If, name=, id=if_poyvuh, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="subroutineCall_dukhev">
+            <icview:log text="action=leg:default, type=If, name=, id=if_poyvuh, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_pepdud">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_pepdud, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'EVENT: Agent or Literature Group.  VDN_transfer : ' + _ws.VDN_transfer  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_pepdud, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="if_tapfap">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_pepdud, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="if_doxnuz">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_doxnuz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="All_Other" value="_ws.literatureFlag == 'N'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_doxnuz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.literatureFlag == 'N'" target="log_tumqop">
+            <icview:log text="action=leg:All_Other, type=If, name=, id=if_doxnuz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="log_pepdud">
+            <icview:log text="action=leg:default, type=If, name=, id=if_doxnuz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="subroutineCall_dukhev">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/libRocheRSN_VDNWS/subroutines/process/vDNRoutingLookup.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_dukhev, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="literatureFlag" expr="_ws.literatureFlag"/>
+               <icview:param name="accountNumber" expr="_ws.accountNumber"/>
+               <icview:param name="instrumentName" expr="_ws.instrumentName"/>
+               <icview:param name="dNIS" expr="_ws.primaryDNIS"/>
+               <icview:param name="vdnName" expr="'VDN'"/>
+               <icview:param name="accountTable" expr="'Account'"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_dukhev, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/libRocheRSN_VDNWS/subroutines/process/vDNRoutingLookup.scxml">
+            <param name="literatureFlag" expr="_ws.literatureFlag"/>
+            <param name="accountNumber" expr="_ws.accountNumber"/>
+            <param name="instrumentName" expr="_ws.instrumentName"/>
+            <param name="dNIS" expr="_ws.primaryDNIS"/>
+            <param name="vdnName" expr="'VDN'"/>
+            <param name="accountTable" expr="'Account'"/>
+         </invoke>
+         <transition event="subroutineCall_dukhev.invoke.done"/>
+         <transition event="success" target="script_kuwpaz">
+            <assign location="_ws.vDNRoutingLookupResult" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:success, type=SubroutineCall, name=, id=subroutineCall_dukhev, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:result name="resultVariable" expr="_ws.vDNRoutingLookupResult"/>
+            </icview:log>
+         </transition>
+         <transition event="error" target="log_tikdis">
+            <assign location="_ws.vDNRoutingLookupResult" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:error, type=SubroutineCall, name=, id=subroutineCall_dukhev, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:result name="resultVariable" expr="_ws.vDNRoutingLookupResult"/>
+            </icview:log>
+         </transition>
+      </state>
+      <state id="script_kuwpaz">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_kuwpaz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/process/WS_ProcessResult_VDNLookup.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_kuwpaz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="if_magdiq"/>
+      </state>
+      <state id="calc_garqiq">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_garqiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.transferVDN"
+                    expr="_ws.defaultVDN(_ws.gateKeeper.getString(&#34;DNIS&#34;))"/>
+            <assign location="_ws.ivrNotes" expr="'VDN Web Services Error'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_garqiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.transferVDN" expr="_ws.transferVDN"/>
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_docdaw">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="voiceEnd_jetbem">
+         <initial>
+            <transition target="doDisconnect_voiceEnd_jetbem"/>
+         </initial>
+         <onentry>
+            <icview:log text="action=entry, type=VoiceEnd, name=, id=voiceEnd_jetbem, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=VoiceEnd, name=, id=voiceEnd_jetbem, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <state id="doDisconnect_voiceEnd_jetbem">
+            <onentry>
+               <vca:disconnect formName="'voiceEnd_jetbem'"/>
+               <scripting:script><![CDATA[
+						icsession.setProperty("intv_vca_disconnect", true);
+					]]></scripting:script>
+            </onentry>
+            <transition event="vca:*" target="activateHangup_voiceEnd_jetbem">
+               <icview:log text="action=leg:vca:*, type=VoiceEnd, name=, id=voiceEnd_jetbem, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+         </state>
+         <state id="activateHangup_voiceEnd_jetbem">
+            <onentry>
+               <send target="'top'" event="'vca:hangup'"/>
+            </onentry>
+            <transition event="send.successful" target="documentExit"/>
+         </state>
+      </state>
+      <state id="if_magdiq">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_magdiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="Continue" value="_ws.errorCode == '0'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_magdiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.errorCode == '0'" target="log_wowvog">
+            <icview:log text="action=leg:Continue, type=If, name=, id=if_magdiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="log_tikdis">
+            <icview:log text="action=leg:default, type=If, name=, id=if_magdiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_wowvog">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_wowvog, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'EVENT: VDN Lookup.  VDN: ' + _ws.transferVDN + ' Literature Flag: ' + _ws.literatureFlag +  ' Account Number: ' + _ws.accountNumber + ' Instrument Name: ' + _ws.instrumentName + ' Error Code: ' + _ws.errorCode + ' Error Desc: ' + _ws.errorDesc  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+            <log expr="'VDN Calculated: ' + _ws.transferVDN + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_wowvog, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_culhej">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_wowvog, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_tikdis">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_tikdis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'EVENT: VDN Lookup Error.  VDN: ' + _ws.transferVDN + ' Literature Flag: ' + _ws.literatureFlag +  ' Account Number: ' + _ws.accountNumber + ' Instrument Name: ' + _ws.instrumentName + ' Error Code: ' + _ws.errorCode + ' Error Desc: ' + _ws.errorDesc  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_tikdis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_garqiq">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_tikdis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_culhej">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_culhej, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.ctiData"
+                    expr="_ws.setCTI_UserData(_ws.caseNumber, _ws.accountNumber, _ws.serialNumber, _ws.instrumentName, _ws.documentType,_ws.lotNumber, _ws.deliveryType, _ws.faxNumber, _ws.ivrNotes)"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_culhej, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ctiData" expr="_ws.ctiData"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_xavfey">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_poqtaw">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_poqtaw, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.transferVDN"
+                    expr="_ws.defaultVDN(_ws.gateKeeper.getString(&#34;DNIS&#34;))"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_poqtaw, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.transferVDN" expr="_ws.transferVDN"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_bixpor">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_bixpor">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_bixpor, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'VDN Calculated: ' + _ws.transferVDN   + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+            <log expr="' _ws.gateKeeper.getString(&#34;TransferReason&#34;) : ' + _ws.gateKeeper.getString(&#34;TransferReason&#34;)   + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_bixpor, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="script_parvah">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_bixpor, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_xavfey">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_xavfey, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'_ws.ctidata.toSource() : ' + _ws.ctiData.toSource() + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_xavfey, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="if_xuhwer">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_xavfey, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_lenquy">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_lenquy, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.transferVDN" expr="_ws.sccTransfer"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_lenquy, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.transferVDN" expr="_ws.transferVDN"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_culhej">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_tumqop">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_tumqop, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'EVENT: Before Lookup Values: ' + ' Literature Flag: ' + _ws.literatureFlag +  ' Account Number: ' + _ws.accountNumber + ' Instrument Name: ' + _ws.instrumentName + ' DNIS' + _ws.primaryDNIS  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_tumqop, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_dukhev">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_tumqop, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="play_besjeg">
+         <initial>
+            <transition target="genericPlay_play_besjeg"/>
+         </initial>
+         <onentry>
+            <icview:log text="action=entry, type=Play, name=, id=play_besjeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Play, name=, id=play_besjeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <state id="genericPlay_play_besjeg">
+            <onentry intv:abortonerror="true">
+               <vca:present loopCount="1" formName="'play_besjeg'">
+                  <vca:presentPrompts cond="true" presentAs="'sequence'">
+                     <vca:prompt bargeIn="true" cond="true"
+                                 expr="'The current transfer VDN is ' + _ws.transferVDN"
+                                 type="'tts'"/>
+                  </vca:presentPrompts>
+               </vca:present>
+            </onentry>
+            <transition event="vca:success" target="voiceEnd_jetbem">
+               <assign location="intv_eventName" expr="'vca:success'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <icview:log text="action=leg:vca:success, type=Play, name=, id=play_besjeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+            <transition event="vca:error.general" target="voiceEnd_jetbem">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.general, type=Play, name=, id=play_besjeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+            <transition event="vca:error.unhandled" target="voiceEnd_jetbem">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.unhandled, type=Play, name=, id=play_besjeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+         </state>
+      </state>
+      <state id="if_mibtuc">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_mibtuc, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="PlayTransfer" value="_ws.testing == 'T'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_mibtuc, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.testing == 'T'" target="play_besjeg">
+            <icview:log text="action=leg:PlayTransfer, type=If, name=, id=if_mibtuc, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="calc_mardug">
+            <icview:log text="action=leg:default, type=If, name=, id=if_mibtuc, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="collect_guhgiz">
+         <initial>
+            <transition target="genericCollect_collect_guhgiz"/>
+         </initial>
+         <onentry>
+            <icview:log text="action=entry, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <assign location="dummyResultVar" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <state id="genericCollect_collect_guhgiz">
+            <onentry intv:abortonerror="true">
+               <vca:collect fallback="false" inputMode="'dtmf'" maxErrors="1" maxNoInput="1" maxNoMatch="1"
+                            maxSpeechTimeout="1"
+                            formName="'ForcePrompts_Clear__collect_guhgiz'">
+                  <vca:grammar expr="'builtin:dtmf/digits?maxlength=1'" mimeType="'application/srgs+xml'"
+                               type="'url'">
+                     <vca:element type="'attr'" name="'mode'" expr="'dtmf'"/>
+                  </vca:grammar>
+                  <vca:element name="'termchar'" expr="'#'" type="'prop'"/>
+                  <vca:element name="'completetimeout'" expr="'0.25'" type="'prop'"/>
+                  <vca:element name="'incompletetimeout'" expr="'0.35'" type="'prop'"/>
+                  <vca:element name="'termtimeout'" expr="'0.4'" type="'prop'"/>
+               </vca:collect>
+            </onentry>
+            <transition event="vca:success" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Success'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:vca:success, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.general" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.general, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.unhandled" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.unhandled, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxnomatch" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxnomatch, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxnoinput" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxnoinput, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxspeechtimeout" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxspeechtimeout, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxerrors" target="if_doxnuz">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="dummyResultVar" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxerrors, type=Collect, name=ForcePrompts_Clear, id=collect_guhgiz, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+                  <icview:result name="resultVariable" expr="dummyResultVar"/>
+               </icview:log>
+            </transition>
+         </state>
+      </state>
+      <state id="if_madkis">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_madkis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="3VDN" value="_ws.transferVDN.substring(0,1) == '3'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_madkis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.transferVDN.substring(0,1) == '3'" target="calc_revbiq">
+            <icview:log text="action=leg:3VDN, type=If, name=, id=if_madkis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="calc_tunqul">
+            <icview:log text="action=leg:default, type=If, name=, id=if_madkis, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_revbiq">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_revbiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.transferVDN" expr="'31700' + _ws.transferVDN"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_revbiq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.transferVDN" expr="_ws.transferVDN"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_fasdeq">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_tunqul">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_tunqul, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.transferVDN" expr="'31752' + _ws.transferVDN"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_tunqul, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.transferVDN" expr="_ws.transferVDN"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_fasdeq">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_techov">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=ctiRRLogSuccess, id=log_techov, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'CTI_RouteRequest SUCCESS  destination:'+ ctiRouteRequestResult.destination+ '  routetype:'+ctiRouteRequestResult.routeType+ '  varcount:'+ctiRouteRequestResult.count  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=ctiRRLogSuccess, id=log_techov, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="if_mibtuc">
+            <icview:log text="action=leg:default, type=Log, name=ctiRRLogSuccess, id=log_techov, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="subroutineCall_zasmep">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/com.intervoice.cti.library/subroutines/process/RouteRequest.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=ctiRouteRequest, id=subroutineCall_zasmep, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="timeout" expr="5"/>
+               <icview:param name="routedn" expr="&#34;RoutedDNString&#34;"/>
+               <icview:param name="dialednumber" expr="_ws.transferVDN"/>
+               <icview:param name="ani" expr="_ws.session.connection.remote.uri.substring(0,10)"/>
+               <icview:param name="ced" expr="undefined"/>
+               <icview:param name="userdata" expr="_ws.ctiData"/>
+               <icview:param name="lineInfo" expr="_ws.session"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=ctiRouteRequest, id=subroutineCall_zasmep, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/com.intervoice.cti.library/subroutines/process/RouteRequest.scxml">
+            <param name="timeout" expr="5"/>
+            <param name="routedn" expr="&#34;RoutedDNString&#34;"/>
+            <param name="dialednumber" expr="_ws.transferVDN"/>
+            <param name="ani" expr="_ws.session.connection.remote.uri.substring(0,10)"/>
+            <param name="ced" expr="undefined"/>
+            <param name="userdata" expr="_ws.ctiData"/>
+            <param name="lineInfo" expr="_ws.session"/>
+         </invoke>
+         <transition event="subroutineCall_zasmep.invoke.done"/>
+         <transition event="success" target="if_hapbeg">
+            <assign location="ctiRouteRequestResult" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:success, type=SubroutineCall, name=ctiRouteRequest, id=subroutineCall_zasmep, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:result name="resultVariable" expr="ctiRouteRequestResult"/>
+            </icview:log>
+         </transition>
+         <transition event="error" target="log_lobras">
+            <assign location="ctiRouteRequestResult" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:error, type=SubroutineCall, name=ctiRouteRequest, id=subroutineCall_zasmep, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:result name="resultVariable" expr="ctiRouteRequestResult"/>
+            </icview:log>
+         </transition>
+      </state>
+      <state id="log_lobras">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_lobras, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'CTI_RouteRequest ERROR'  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_lobras, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_pezmir">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_lobras, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_pezmir">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Default_setBlindXferString, id=calc_pezmir, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.blindXferString"
+                    expr="'sip:' + _ws.transferVDN + _ws.Options.translate('blindXferRedirectHostIP')"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Default_setBlindXferString, id=calc_pezmir, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.blindXferString" expr="_ws.blindXferString"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="play_rudjon">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_mardug">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Cisco_setBlindXferString, id=calc_mardug, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.blindXferString"
+                    expr="'sip:' + ctiRouteRequestResult.destination +_ws.Options.translate('blindXferRedirectHostIP')"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Cisco_setBlindXferString, id=calc_mardug, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.blindXferString" expr="_ws.blindXferString"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_pepral">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="transfer_cezkar">
+         <onentry>
+            <icview:log text="action=entry, type=Transfer, name=Cisco_BlindTransfer, id=transfer_cezkar, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <vca:transfer type="'blind'" destexpr="_ws.blindXferString"
+                          aaiexpr="'INTVEXT=true;callProgress='+false+';transferAudioRepeat='+false+';'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Transfer, name=Cisco_BlindTransfer, id=transfer_cezkar, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="vca:success" target="log_feyxad">
+            <assign location="intv_eventName" expr="'vca:success'"/>
+            <assign location="intv_eventData" expr="_eventdata"/>
+            <icview:log text="action=leg:vca:success, type=Transfer, name=Cisco_BlindTransfer, id=transfer_cezkar, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition event="vca:error.general" target="log_feyxad">
+            <assign location="intv_eventName" expr="'Catastrophic'"/>
+            <assign location="intv_eventData" expr="_eventdata"/>
+            <icview:log text="action=leg:vca:error.general, type=Transfer, name=Cisco_BlindTransfer, id=transfer_cezkar, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_feyxad">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_feyxad, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'Blind transfer complete '" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_feyxad, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="voiceEnd_jetbem">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_feyxad, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="subroutineCall_wilmow">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/com.intervoice.cti.library/subroutines/process/AddUserData.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_wilmow, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="timeout" expr="5"/>
+               <icview:param name="userdata" expr="_ws.ctiData"/>
+               <icview:param name="lineInfo" expr="_ws.session"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_wilmow, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/com.intervoice.cti.library/subroutines/process/AddUserData.scxml">
+            <param name="timeout" expr="5"/>
+            <param name="userdata" expr="_ws.ctiData"/>
+            <param name="lineInfo" expr="_ws.session"/>
+         </invoke>
+         <transition event="subroutineCall_wilmow.invoke.done"/>
+         <transition event="success" target="subroutineCall_zasmep">
+            <assign location="ctiAddUserDataResult" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:success, type=SubroutineCall, name=, id=subroutineCall_wilmow, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:result name="resultVariable" expr="ctiAddUserDataResult"/>
+            </icview:log>
+         </transition>
+         <transition event="error" target="log_lobras">
+            <assign location="ctiAddUserDataResult" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:error, type=SubroutineCall, name=, id=subroutineCall_wilmow, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:result name="resultVariable" expr="ctiAddUserDataResult"/>
+            </icview:log>
+         </transition>
+      </state>
+      <state id="log_docdaw">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_docdaw, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'VDN Calculated: ' + _ws.transferVDN  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_docdaw, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_culhej">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_docdaw, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_fasdeq">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_fasdeq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'VDN Cisco Formatted: ' + _ws.transferVDN  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_fasdeq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_wilmow">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_fasdeq, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="if_xuhwer">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_xuhwer, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="MD"
+                             value="_ws.transferVDN == '16014' || _ws.transferVDN == '16016' || _ws.transferVDN == '16049' || _ws.transferVDN == '16283' || _ws.transferVDN == '16282' || _ws.transferVDN == '16038' || _ws.transferVDN == '16289' || _ws.transferVDN == '16290' || _ws.transferVDN == '30504' || _ws.transferVDN == '16281' || _ws.transferVDN == '13585' || _ws.transferVDN == '15388' || _ws.transferVDN == '15384' || _ws.transferVDN == '15386' || _ws.transferVDN == '15366' || _ws.transferVDN == '15348' || _ws.transferVDN == '15508' || _ws.transferVDN == '16181' || _ws.transferVDN == '39945' || _ws.transferVDN == '39984' || _ws.transferVDN == '36567' || _ws.transferVDN == '36566' || _ws.transferVDN == '15397' || _ws.transferVDN == '15385'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_xuhwer, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.transferVDN == '16014' || _ws.transferVDN == '16016' || _ws.transferVDN == '16049' || _ws.transferVDN == '16283' || _ws.transferVDN == '16282' || _ws.transferVDN == '16038' || _ws.transferVDN == '16289' || _ws.transferVDN == '16290' || _ws.transferVDN == '30504' || _ws.transferVDN == '16281' || _ws.transferVDN == '13585' || _ws.transferVDN == '15388' || _ws.transferVDN == '15384' || _ws.transferVDN == '15386' || _ws.transferVDN == '15366' || _ws.transferVDN == '15348' || _ws.transferVDN == '15508' || _ws.transferVDN == '16181' || _ws.transferVDN == '39945' || _ws.transferVDN == '39984' || _ws.transferVDN == '36567' || _ws.transferVDN == '36566' || _ws.transferVDN == '15397' || _ws.transferVDN == '15385'"
+                     target="if_madkis">
+            <icview:log text="action=leg:MD, type=If, name=, id=if_xuhwer, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="calc_wuzdoj">
+            <icview:log text="action=leg:default, type=If, name=, id=if_xuhwer, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_wuzdoj">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_wuzdoj, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="_ws.transferVDN"
+                    expr="_ws.defaultVDN(_ws.gateKeeper.getString(&#34;DNIS&#34;))"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_wuzdoj, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true">
+               <icview:result name="_ws.transferVDN" expr="_ws.transferVDN"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_gexxak">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_gexxak">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_gexxak, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'NON-MD/ITBG NUMBER...transfer VDN set to default: ' + _ws.transferVDN + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_gexxak, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="if_madkis">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_gexxak, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="play_rudjon">
+         <initial>
+            <transition target="genericPlay_play_rudjon"/>
+         </initial>
+         <onentry>
+            <icview:log text="action=entry, type=Play, name=, id=play_rudjon, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Play, name=, id=play_rudjon, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <state id="genericPlay_play_rudjon">
+            <onentry intv:abortonerror="true">
+               <vca:present loopCount="1" formName="'play_rudjon'">
+                  <vca:presentPrompts cond="true" presentAs="'sequence'">
+                     <vca:prompt bargeIn="true" cond="true"
+                                 expr="'We are currently having technical difficulties  Please try again later  Sorry for the inconvenience!'"
+                                 type="'tts'"/>
+                  </vca:presentPrompts>
+               </vca:present>
+            </onentry>
+            <transition event="vca:success" target="voiceEnd_jetbem">
+               <assign location="intv_eventName" expr="'vca:success'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <icview:log text="action=leg:vca:success, type=Play, name=, id=play_rudjon, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+            <transition event="vca:error.general" target="voiceEnd_jetbem">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.general, type=Play, name=, id=play_rudjon, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+            <transition event="vca:error.unhandled" target="voiceEnd_jetbem">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.unhandled, type=Play, name=, id=play_rudjon, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            </transition>
+         </state>
+      </state>
+      <state id="if_hapbeg">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_hapbeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml">
+               <icview:param name="Error" value="ctiRouteRequestResult.returnCode == &#34;ERROR&#34;"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_hapbeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="ctiRouteRequestResult.returnCode == &#34;ERROR&#34;" target="log_lobras">
+            <icview:log text="action=leg:Error, type=If, name=, id=if_hapbeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+         <transition cond="true" target="log_techov">
+            <icview:log text="action=leg:default, type=If, name=, id=if_hapbeg, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+      <state id="log_pepral">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_pepral, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+            <log expr="'Blind Transfer String: ' + _ws.blindXferString  + ' | CallID: ' + _ws.session.connection.callid"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_pepral, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="transfer_cezkar">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_pepral, document=/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.scxml"/>
+         </transition>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

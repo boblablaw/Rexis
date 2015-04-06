@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="ID3350_MolecularProductName grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_en-US.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+  	
+	<one-of>
+		        
+        
+        <item> 
+            <one-of>
+			<item>amplilink</item>
+			<item>ampliscreen</item>
+			<item>amplilink data station</item>
+			<item>data station</item>
+            </one-of>
+          
+			<tag>CHOICE='amplilinkampliscreen'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>bio tek plate reader e l x eight hundred</item>
+			<item>e l x eight hundred</item>
+            </one-of>
+          
+			<tag>CHOICE='biotekplatereaderelx800'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>bio tek plate washer e l x fifty</item>
+			<item>e l x fifty</item>
+            </one-of>
+          
+			<tag>CHOICE='biotekplatewasherelx50'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>captaq</item>
+            </one-of>
+          
+			<tag>CHOICE='captaq'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas ampliprep</item>
+			<item>ampliprep</item>
+			<item>ampliprep taqman</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas ampliprep ninety six</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>roche ampliprep</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>the ampliprep</item> <!-- Tuning Update DIR 9/27/12 --> 
+            </one-of>
+          
+			<tag>CHOICE='cobasampliprep'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas amplicor</item>
+			<item>amplicor</item>
+			<item>roche amplicor</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobasamplicor'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>gene amp ninety six hundred</item>
+            </one-of>
+          
+			<tag>CHOICE='geneamppcssytem9600'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>hamilton diluter</item>
+			<item>hamilton star</item>
+			<item>hamilton</item>
+			<item>hamilton micro lab star</item> <!-- Tuning Update DIR 9/27/12 --> 
+			<item>s two oh one hamilton</item> <!-- Tuning Update DIR 9/27/12 --> 
+            </one-of>
+          
+			<tag>CHOICE='hamilton'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>heraeus seventeen r s centrifuge</item>
+            </one-of>
+          
+			<tag>CHOICE='heraeus17rscentrifuge'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>light cycler</item>
+			<item>light cycler one point two</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>light cycler two point oh</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+
+          
+			<tag>CHOICE='lightcycler'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>linear array</item>
+            </one-of>
+          
+			<tag>CHOICE='lineararray'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>magna pure</item>
+			<item>magna pure l c</item>
+			<item>magna pure ninety six</item>
+
+            </one-of>
+          
+			<tag>CHOICE='magnapure'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>matrix impact pipette</item>
+			<item>matrix pipette</item>
+			<item>pipette</item>
+			<item>pipetter</item>
+            </one-of>
+          
+			<tag>CHOICE='matriximpactpipette'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>p d m</item>
+			<item>p d m server</item>
+			<item>server</item>
+            </one-of>
+          
+			<tag>CHOICE='pdm'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>s two oh one</item>
+			<item>s two zero one</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas s two oh one</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas s two zero one</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas s two oh one system</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas s two zero one system</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>s two oh one system</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='s201'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>taqman</item>
+			<item>taqman forty eight</item>
+			<item>taqman ninety six</item>
+			<item>cobas taqman</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>cobas taqman forty eight</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas taqman fourty eight analyzer</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='taqman'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>tecan</item>
+            </one-of>
+          
+			<tag>CHOICE='tecan'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas forty eight hundred</item>
+			<item>forty eight hundred</item>
+			<item>four eighty z</item>
+			<item>four eighty x</item>
+			<item>cobas taqman forty eight</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>v four eighty</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>cobas forty eight zero</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas x four eight zero</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas x four eighty</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>x four eight zero</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>x four eighty</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas x</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z four eighty</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>z four eighty</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z four eight zero zero</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>z four eight zero zero</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z four eight oh oh</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>z four eight oh oh</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobas4800'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>magnalyzer</item>
+            </one-of>
+          
+			<tag>CHOICE='magnalyzer'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>light cycler carousel centrifuge</item>
+			<item>light cycler centrifuge</item>
+			<item>carousel centrifuge</item>
+            </one-of>
+          
+			<tag>CHOICE='lightcyclercarouselcentrifuge'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>amplichip</item>
+            </one-of>
+          
+			<tag>CHOICE='amplichip'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>m c o e</item>
+            </one-of>
+          
+			<tag>CHOICE='mcoe'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>thermal cycler</item>
+			<item>i don't have an instrument</item> <!-- Tuning Update 9/29/12 -->
+			<item>i am not calling about an instrument</item> <!-- Tuning Update 9/29/12 -->
+			<item>i'm not calling about an instrument</item> <!-- Tuning Update 9/29/12 -->
+			<item>not an instrument</item> <!-- Tuning Update 9/29/12 -->
+			<item>not calling about an instrument</item> <!-- Tuning Update 9/29/12 -->
+            </one-of>
+          
+			<tag>CHOICE='thermalcycler'</tag>
+		</item>
+		
+ <!-- New Product Names Change Request    DIR 9/28/12 -->
+       
+        <item> 
+            <one-of>
+			<item>donor screening</item>
+			<item>donor screen</item>
+			<item>blood screen</item>
+			<item>blood donor</item>
+			<item>o p o</item>
+            </one-of>
+          
+			<tag>CHOICE='donorscreening'</tag>
+		</item>
+        <item> 
+            <one-of>
+			<item>middleware</item>
+			<item>roche middleware</item>
+			<item>d i middleware</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>data innovations middleware</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>um middleware</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>data innovations instrument middleware</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='middleware'</tag>
+		</item>
+        <item> 
+            <one-of>
+			<item>west nile virus</item>
+			<item>west nile</item>
+			<item>w n v</item>
+            </one-of>
+          
+			<tag>CHOICE='westnilevirus'</tag>
+			
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>m p x</item>
+            </one-of>
+          
+			<tag>CHOICE='mpx'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>d p x</item>
+            </one-of>
+          
+			<tag>CHOICE='dpx'</tag>
+		</item>   
+		
+        <item> 
+            <one-of>
+			<item>accucheck</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>accucheck inform</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>acutane</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>coag checks</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>coagu checks</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='accucheck'</tag> <!-- Tuning Update DIR 09/28/12 -->
+		</item> 
+       
+        <item> 
+            <one-of>
+			<item>cobas</item>
+            </one-of>
+          
+			<tag>CHOICE='cobas'</tag>
+		</item>   
+        
+ </one-of>
+</rule>
+
+</grammar>

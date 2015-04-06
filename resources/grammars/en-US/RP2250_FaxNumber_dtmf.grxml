@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="dtmf" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="RP2250_FaxNumber_dtmf grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+
+	
+<rule id="root" scope="public">
+	
+	<item><ruleref uri="#digits_ten"/>
+		<tag> DATA=digits_ten.DIGITSTRING;CHOICE='phonenumber' </tag>
+	</item>
+		
+</rule>
+
+
+<!--#################################################################
+INDIVIDUAL LENGTHS
+####################################################################-->
+
+<rule id="digits_ten" scope="public">
+<item>
+				<tag>DIGITSTRING='';</tag>
+				
+				<item> <ruleref uri="#start"/>
+					<tag>DIGITSTRING=start.DIGIT;</tag>
+				</item>
+				<item><ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				
+</item>
+</rule>
+
+<!--#################################################################
+COMPONENTS
+####################################################################-->
+
+<rule id="start" scope="public">
+		<one-of>
+			<item><tag>DIGIT='2';</tag>2</item>
+			<item><tag>DIGIT='3';</tag>3</item>
+			<item><tag>DIGIT='4';</tag>4</item>
+			<item><tag>DIGIT='5';</tag>5</item>
+			<item><tag>DIGIT='6';</tag>6</item>
+			<item><tag>DIGIT='7';</tag>7</item>
+			<item><tag>DIGIT='8';</tag>8</item>
+			<item><tag>DIGIT='9';</tag>9</item>
+		</one-of>
+</rule>
+
+<rule id="digit" scope="public">
+		<one-of>
+			<item><tag>DIGIT='1';</tag>1</item>
+			<item><tag>DIGIT='2';</tag>2</item>
+			<item><tag>DIGIT='3';</tag>3</item>
+			<item><tag>DIGIT='4';</tag>4</item>
+			<item><tag>DIGIT='5';</tag>5</item>
+			<item><tag>DIGIT='6';</tag>6</item>
+			<item><tag>DIGIT='7';</tag>7</item>
+			<item><tag>DIGIT='8';</tag>8</item>
+			<item><tag>DIGIT='9';</tag>9</item>
+			<item><tag>DIGIT='0';</tag>0</item>
+		</one-of>
+</rule>
+
+
+</grammar>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<grammar version="1.0" xmlns="http://www.w3.org/2001/06/grammar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/06/grammar
+                             http://www.w3.org/TR/speech-grammar/grammar.xsd" xml:lang="en-US"  mode="dtmf" tag-format="swi-semantics/1.0"  root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="This grammar allows callers to dtmf 4 digit strings." />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+<!-- 6to12Digits.grxml Modified by J. Kosa 06-23-2010 - Created by: Simonie Wilson on  1/25/2008 -->
+<!-- IVR platform: ANY -->
+<!-- Speech platform: Nuance 9.x -->
+<!-- This grammar allows callers to dtmf 4 length digit strings -->
+
+<rule id='root' scope='public'>
+ <one-of>
+       <item weight=".99">
+		<ruleref uri="#digits4"/>
+		<tag>DNIS=digits4.DigitString</tag>
+       </item>       
+  </one-of>
+</rule>
+
+
+<rule id="digits4">
+	<!-- collect 4 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+	<!--1 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+	<!--2 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--3 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--4-->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+
+		</item>
+	</one-of>
+	</rule>
+
+
+<rule id="digits5">
+	<!-- collect 5 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+	<!--1 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+	<!--2 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--3 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--4-->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--5 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+	</rule>
+
+
+<rule id="digits6">
+	<!-- collect 6 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+	<!--1 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+	<!--2 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--3 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--4-->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+	<!--5 -->		<ruleref uri="#digit"/>
+				<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6 -->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+	</rule>
+
+<rule id="digits7">
+	<!-- collect 7 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--1 -->		<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--2-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--3-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--4-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--5-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--7-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+</rule>
+
+<rule id="digits8">
+	<!-- collect 8 concatenated digits -->
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--1 -->		<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--2-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--3-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--4-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--5-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--7-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--8-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+</rule>
+
+<rule id="digits9">
+	<!-- collect 9 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--1 -->		<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--2-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--3-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--4-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--5-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--7-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--8-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--9-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+</rule>
+
+<rule id="digits10">
+	<!-- collect 10 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--1 -->		<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--2-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--3-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--4-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--5-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--7-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--8-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--9-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--10-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+</rule>
+
+<rule id="digits11">
+	<!-- collect 11 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--1 -->		<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--2-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--3-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--4-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--5-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--7-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--8-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--9-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--10-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--11-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+</rule>
+
+<rule id="digits12">
+	<!-- collect 12 concatenated digits -->
+
+	<one-of>
+		<item>
+			<tag>DigitString='';</tag>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--1 -->		<tag>DigitString=digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--2-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--3-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--4-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--5-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--6-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--7-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--8-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--9-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--10-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--11-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+			<item>
+				<ruleref uri="#digit"/>
+	<!--12-->		<tag>DigitString=DigitString + digit.Digit;</tag>
+			</item>
+		</item>
+	</one-of>
+</rule>
+
+<rule id="digit">
+		<one-of>
+			<item><tag>Digit='1';</tag>1</item>
+			<item><tag>Digit='2';</tag>2</item>
+			<item><tag>Digit='3';</tag>3</item>
+			<item><tag>Digit='4';</tag>4</item>
+			<item><tag>Digit='5';</tag>5</item>
+			<item><tag>Digit='6';</tag>6</item>
+			<item><tag>Digit='7';</tag>7</item>
+			<item><tag>Digit='8';</tag>8</item>
+			<item><tag>Digit='9';</tag>9</item>
+			<item><tag>Digit='0';</tag>0</item>
+		</one-of>
+	</rule>
+
+</grammar>
+

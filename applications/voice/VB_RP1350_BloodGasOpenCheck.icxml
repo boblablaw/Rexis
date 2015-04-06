@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<icxml:icxml xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gtfns="http://www.intervoice.com/gtfns/1.0" xmlns:icxml="http://www.intervoice.com/icxml" xmi:id="_ZuDgAW4JEeGikeqwP1_oxQ" type="voiceBlockType" gtfns:version="1.5.1.0">
+  <icxml:variables xmi:id="_ZuDgBG4JEeGikeqwP1_oxQ">
+    <icxml:variable xmi:id="_ZuDgBW4JEeGikeqwP1_oxQ" name="intv_appType"/>
+    <icxml:variable xmi:id="_ZuDgBm4JEeGikeqwP1_oxQ" name="intv_eventName"/>
+    <icxml:variable xmi:id="_ZuDgB24JEeGikeqwP1_oxQ" name="intv_eventData"/>
+    <icxml:variable xmi:id="_ZuDgCG4JEeGikeqwP1_oxQ" name="intv_noFieldsInitialized"/>
+    <icxml:variable xmi:id="_ZuDgCW4JEeGikeqwP1_oxQ" name="intv_allFieldsInitialized"/>
+    <icxml:variable xmi:id="_ZuDgCm4JEeGikeqwP1_oxQ" name="intv_atLeastOneSituationExecuted"/>
+    <icxml:variable xmi:id="_ZuDgC24JEeGikeqwP1_oxQ" name="intv_modalities"/>
+    <icxml:variable xmi:id="_vaOTQJ9mEeGPY-tYxKi6pA" name="dummy"/>
+  </icxml:variables>
+  <icxml:form xsi:type="icxml:BlockEntry" xmi:id="_ZuDgDG4JEeGikeqwP1_oxQ" id="blockEntry_nazcev" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:blockEntry xmi:id="_ZuDgEW4JEeGikeqwP1_oxQ" description="Description - ..."/><icxml:comment xmi:id="_ZuDgEm4JEeGikeqwP1_oxQ"/><icxml:default xmi:id="_8uUcAJ9lEeGPY-tYxKi6pA" target="_7nGVQJ9lEeGPY-tYxKi6pA" label=""/></icxml:form>
+  <icxml:form xsi:type="icxml:If" xmi:id="_7nGVQJ9lEeGPY-tYxKi6pA" id="if_nakzow" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:if xmi:id="_7nGVQZ9lEeGPY-tYxKi6pA" elseLabel="Transfer"><icxml:ifValue xmi:id="_7nGVQp9lEeGPY-tYxKi6pA" expr="_ws.BloodGasBH.isOpen()" label="Continue"/></icxml:if><icxml:comment xmi:id="_7nGVQ59lEeGPY-tYxKi6pA"/><icxml:default xmi:id="_1044QKAkEeG9joBSpMCDHw" target="_yLP4EKAkEeG9joBSpMCDHw" gtfns:name="Transfer" label="Transfer"/><icxml:conditional xmi:id="_DuPbgJ9mEeGPY-tYxKi6pA" target="_C4v98J9mEeGPY-tYxKi6pA" gtfns:name="Continue" label="Continue"/></icxml:form>
+  <icxml:form xsi:type="icxml:GotoBlock" xmi:id="_C4v98J9mEeGPY-tYxKi6pA" id="goToBlock_qebjes" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:gotoBlock xmi:id="_C4v98Z9mEeGPY-tYxKi6pA" functionalBlockName="/resource/RocheRPS_Rexis/applications/voice/VB_RP1100_NewOrExisting.diagram" description="Description - ..."/><icxml:comment xmi:id="_C4v98p9mEeGPY-tYxKi6pA"/></icxml:form>
+  <icxml:form xsi:type="icxml:GotoBlock" xmi:id="_JlvaYJ9mEeGPY-tYxKi6pA" id="goToBlock_febzoq" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:gotoBlock xmi:id="_JlvaYZ9mEeGPY-tYxKi6pA" functionalBlockName="/resource/RocheRPS_Rexis/applications/voice/VB_RP9050_TransferMessages.diagram" description="Description - ..."/><icxml:comment xmi:id="_JlvaYp9mEeGPY-tYxKi6pA"/></icxml:form>
+  <icxml:form xsi:type="icxml:Script" xmi:id="_yLP4EKAkEeG9joBSpMCDHw" id="script_vocweq" signpost="false" skip="false" debug="false" tunnelExit="false"><icxml:script xmi:id="_yLP4EaAkEeG9joBSpMCDHw" inline="false"><icxml:scriptFile xmi:id="_yySp8KAkEeG9joBSpMCDHw" filename="'/scripts/js/menus/RP1350_BloodGasOpenCheck_ACTION_1.js'"/></icxml:script><icxml:comment xmi:id="_yLP4EqAkEeG9joBSpMCDHw"/><icxml:default xmi:id="_2TSEcKAkEeG9joBSpMCDHw" target="_JlvaYJ9mEeGPY-tYxKi6pA" label=""/></icxml:form>
+</icxml:icxml>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" xmlns="http://www.w3.org/2001/06/grammar"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3.org/2001/06/grammar
+                             http://www.w3.org/TR/speech-grammar/grammar.xsd"
+ xml:lang="en-US" mode="voice" tag-format="swi-semantics/1.0" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="This grammar collects a 10-digit
+			account number with associated prefillers. " />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+	<rule id="root" scope="public">
+		<one-of>
+			<item>
+				<item repeat="0-1"> <ruleref uri="#prefix"/> </item>
+				<item>	<ruleref uri="#digits5"/>
+					<tag>DATA=digits5.DIGITSTRING; EXTRA='zipcode';</tag>
+				</item>
+			</item>
+		</one-of>
+	</rule>
+ 
+	<rule id="digits5">
+		<!-- collect 10 concatenated digits -->
+		<one-of>
+			<item>
+				<tag>DIGITSTRING='';</tag>
+				<item> <ruleref uri="#digit"/>
+					<tag>DIGITSTRING=digit.DIGIT;</tag>
+				</item>
+				<item><ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+			</item>
+		</one-of>
+	</rule>
+	<rule id="digit">
+		<one-of>
+			<item><tag>DIGIT='1';</tag>one</item>
+			<item><tag>DIGIT='2';</tag>two</item>
+			<item><tag>DIGIT='3';</tag>three</item>
+			<item><tag>DIGIT='4';</tag>four</item>
+			<item><tag>DIGIT='5';</tag>five</item>
+			<item><tag>DIGIT='6';</tag>six</item>
+			<item><tag>DIGIT='7';</tag>seven</item>
+			<item><tag>DIGIT='8';</tag>eight</item>
+			<item><tag>DIGIT='9';</tag>nine</item>
+			<item><tag>DIGIT='0';</tag>zero</item>
+			<item><tag>DIGIT='0';</tag>oh</item>
+		</one-of>
+	</rule>
+	<rule id="prefix">
+		<example>(my/the) account number (is)</example>
+		<one-of>
+			<item><item repeat="0-1">
+					<one-of>
+						<item>my</item>
+						<item>the</item>
+					</one-of>
+				</item>
+				<one-of>
+					<item>zip code</item>
+				</one-of>
+				<item repeat="0-1">is</item>
+			</item>
+			<item>
+				<one-of>
+					<item>it's</item>
+					<item>that's</item>
+				</one-of>
+			</item>
+		</one-of>
+	</rule>
+</grammar>

@@ -1,0 +1,8 @@
+#Fri Mar 27 13:54:40 EDT 2015
+ic_package_notifyerrorexist=true
+ic_package_overwriteExistingWarFile=true
+ic_package_location=Deployment Artifacts
+ic_package_defaultlocation=true
+ic_package_validationshowerror=true
+ic_package_name=RocheRPS
+ic_package_includedebugcomponents=false

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 11:14:42.617 GMT-4--><!--Note: Components marked as 'debug' have not been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="eventProcess_qojnej"/>
+      </state>
+      <datamodel><!--Variables from declaration block: _T-k6xB6KEeCmXNWSPyAURA--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+      </datamodel>
+      <state id="eventProcess_qojnej">
+         <onentry>
+            <icview:log text="action=entry, type=EventProcess, name=AsyncHanger, id=eventProcess_qojnej, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+            <assign location="intv_eventName" expr="_scxml.parameters.intv_eventName"/>
+            <assign location="intv_eventData" expr="_scxml.parameters.intv_eventData"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=EventProcess, name=AsyncHanger, id=eventProcess_qojnej, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="intv_eventName == 'Catastrophic'" target="eventEntry_xiglob">
+            <icview:log text="action=leg:CatastrophicAction, type=EventProcess, name=AsyncHanger, id=eventProcess_qojnej, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </transition>
+         <transition cond="intv_eventName == 'Hangup'" target="hangup_fictax">
+            <icview:log text="action=leg:HangupAction, type=EventProcess, name=AsyncHanger, id=eventProcess_qojnej, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </transition>
+         <transition cond="intv_eventName == 'Initialize'" target="initialize_ziqbiy">
+            <icview:log text="action=leg:InitializeAction, type=EventProcess, name=AsyncHanger, id=eventProcess_qojnej, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </transition>
+      </state>
+      <state id="eventEntry_xiglob">
+         <onentry>
+            <icview:log text="action=entry, type=EventEntry, name=, id=eventEntry_xiglob, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=EventEntry, name=, id=eventEntry_xiglob, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="eventExit_pajqij"/>
+      </state>
+      <state xmlns:ccxml="http://www.intervoice.com/sce/action/ccxml" id="eventExit_pajqij">
+         <initial>
+            <transition target="runCleanup_eventExit_pajqij"/>
+         </initial>
+         <state id="runCleanup_eventExit_pajqij">
+            <initial>
+               <transition target="initCleanup_eventExit_pajqij"/>
+            </initial>
+            <datamodel>
+               <data name="index" expr="null"/>
+               <data name="src" expr="null"/>
+            </datamodel>
+            <state id="initCleanup_eventExit_pajqij">
+               <onentry>
+                  <icview:log text="action=entry, type=EventExit, name=, id=eventExit_pajqij, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+                  <assign location="index" expr="0"/>
+               </onentry>
+               <transition target="cleanupCheck_eventExit_pajqij"/>
+            </state>
+            <state id="cleanupCheck_eventExit_pajqij">
+               <transition cond="index &lt; _ws.intv_librarySize" target="cleanupLibrary_eventExit_pajqij"/>
+               <transition cond="true" target="endApp_eventExit_pajqij"/>
+            </state>
+            <state id="cleanupLibrary_eventExit_pajqij">
+               <onentry>
+                  <assign location="src" expr="_ws.intv_libraryList[index++]"/>
+                  <assign location="intv_eventName" expr="'Cleanup'"/>
+                  <assign location="intv_eventData" expr="undefined"/>
+               </onentry>
+               <invoke targettype="x-scxml-component" srcexpr="src + 'AsyncEvent.scxml'">
+                  <param name="intv_eventName" expr="intv_eventName"/>
+                  <param name="intv_eventData" expr="intv_eventData"/>
+               </invoke>
+               <transition event="vca:*"/>
+               <transition event="error.*"/>
+               <transition event="cleanupLibrary_eventExit_pajqij.invoke.done"
+                           target="cleanupCheck_eventExit_pajqij"/>
+            </state>
+         </state>
+         <state id="endApp_eventExit_pajqij">
+            <datamodel>
+               <data name="gotoexit" expr="true"/>
+            </datamodel>
+            <onentry>
+               <icview:log text="action=entry, type=EventExit, name=, id=eventExit_pajqij, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+               <scripting:script><![CDATA[
+						_ws.intv_vca_disconnect = icsession.getProperty("intv_vca_disconnect");
+					]]></scripting:script>
+               <if cond="intv_appType == 'voice'">
+                  <if cond="_ws.intv_vca_disconnect != true">
+                     <vca:disconnect formName="'eventExit_pajqij'"/>
+                     <scripting:script><![CDATA[
+								icsession.setProperty("intv_vca_disconnect", true);
+								// do not go to documentExit, wait for vca:hangup
+								gotoexit = false;
+							]]></scripting:script>
+                     <else/>
+                     <if cond="icsession.getProperty('intv_enableHangupAfterCatastrophic') != true">
+                        <vca:exit formName="'eventExit_pajqij'"/>
+                     </if>
+                  </if>
+                  <elseif cond="intv_appType == 'call'"/>
+                  <ccxml:exit/>
+                  <else/>
+                  <process:exit namelist=""/>
+               </if>
+            </onentry>
+            <onexit>
+               <icview:log text="action=exit, type=EventExit, name=, id=eventExit_pajqij, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                           nolog="true"/>
+            </onexit>
+            <transition cond="gotoexit" target="documentExit"/>
+            <transition event="vca:*" target="activateHangup_voiceEnd__eventExit_pajqij"/>
+         </state>
+         <state id="activateHangup_voiceEnd__eventExit_pajqij">
+            <onentry>
+               <icview:log text="action=entry, type=EventExit, name=, id=eventExit_pajqij, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+               <if cond="icsession.getProperty('intv_enableHangupAfterCatastrophic') != true">
+                  <vca:exit formName="'eventExit_pajqij'"/>
+               </if>
+            </onentry>
+            <transition target="documentExit"/>
+         </state>
+      </state>
+      <state id="hangup_fictax">
+         <onentry>
+            <icview:log text="action=entry, type=Hangup, name=, id=hangup_fictax, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Hangup, name=, id=hangup_fictax, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="hangupend_wasbaw"/>
+      </state>
+      <state xmlns:ccxml="http://www.intervoice.com/sce/action/ccxml" id="hangupend_wasbaw">
+         <initial>
+            <transition target="runCleanup_hangupend_wasbaw"/>
+         </initial>
+         <state id="runCleanup_hangupend_wasbaw">
+            <initial>
+               <transition target="initCleanup_hangupend_wasbaw"/>
+            </initial>
+            <datamodel>
+               <data name="index" expr="null"/>
+               <data name="src" expr="null"/>
+            </datamodel>
+            <state id="initCleanup_hangupend_wasbaw">
+               <onentry>
+                  <icview:log text="action=entry, type=HangupEnd, name=, id=hangupend_wasbaw, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+                  <assign location="index" expr="0"/>
+               </onentry>
+               <transition target="cleanupCheck_hangupend_wasbaw"/>
+            </state>
+            <state id="cleanupCheck_hangupend_wasbaw">
+               <transition cond="index &lt; _ws.intv_librarySize" target="cleanupLibrary_hangupend_wasbaw"/>
+               <transition cond="true" target="doHangup_hangupend_wasbaw"/>
+            </state>
+            <state id="cleanupLibrary_hangupend_wasbaw">
+               <onentry>
+                  <assign location="src" expr="_ws.intv_libraryList[index++]"/>
+                  <assign location="intv_eventName" expr="'Cleanup'"/>
+                  <assign location="intv_eventData" expr="undefined"/>
+               </onentry>
+               <invoke targettype="x-scxml-component" srcexpr="src + 'AsyncEvent.scxml'">
+                  <param name="intv_eventName" expr="intv_eventName"/>
+                  <param name="intv_eventData" expr="intv_eventData"/>
+               </invoke>
+               <transition event="vca:*"/>
+               <transition event="error.*"/>
+               <transition event="cleanupLibrary_hangupend_wasbaw.invoke.done"
+                           target="cleanupCheck_hangupend_wasbaw"/>
+            </state>
+         </state>
+         <state id="doHangup_hangupend_wasbaw">
+            <onentry>
+               <icview:log text="action=entry, type=HangupEnd, name=, id=hangupend_wasbaw, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+               <if cond="intv_appType == 'voice'">
+                  <vca:exit formName="'hangupend_wasbaw'"/>
+                  <elseif cond="intv_appType == 'call'"/>
+                  <ccxml:exit/>
+               </if>
+            </onentry>
+            <onexit>
+               <icview:log text="action=exit, type=HangupEnd, name=, id=hangupend_wasbaw, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                           nolog="true"/>
+            </onexit>
+            <transition target="documentExit"/>
+         </state>
+      </state>
+      <state xmlns:cfg="http://www.intervoice.com/sce/action/configuration"
+             id="initialize_ziqbiy">
+         <initial>
+            <transition target="checkAppType_initialize_ziqbiy"/>
+         </initial>
+         <onentry>
+            <icview:log text="action=entry, type=InitializeSession, name=, id=initialize_ziqbiy, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml">
+               <icview:param name="tableId" value="config/tt/DNIS_TT.tt"/>
+               <icview:param name="tableId" value="config/tt/Endpoint_TT.tt"/>
+               <icview:param name="tableId" value="config/tt/EndpointVDN_TT.tt"/>
+               <icview:param name="tableId" value="config/tt/Options.tt"/>
+               <icview:param name="tableId" value="config/bh/ITProduct.bh"/>
+               <icview:param name="tableId" value="config/bh/Molecular.bh"/>
+               <icview:param name="tableId" value="config/bh/BloodGas.bh"/>
+               <icview:param name="tableId" value="config/bh/ClinChem.bh"/>
+               <icview:param name="tableId" value="config/bh/SCC.bh"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=InitializeSession, name=, id=initialize_ziqbiy, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true">
+               <icview:result name="variable" value="_ws.DNIS_TT"/>
+               <icview:result name="variable" value="_ws.Endpoint_TT"/>
+               <icview:result name="variable" value="_ws.EndpointVDN_TT"/>
+               <icview:result name="variable" value="_ws.Options"/>
+               <icview:result name="variable" value="_ws.ITProductBH"/>
+               <icview:result name="variable" value="_ws.MolecularBH"/>
+               <icview:result name="variable" value="_ws.BloodGasBH"/>
+               <icview:result name="variable" value="_ws.ClinChemBH"/>
+               <icview:result name="variable" value="_ws.SCC"/>
+            </icview:log>
+         </onexit>
+         <state id="checkAppType_initialize_ziqbiy">
+            <transition cond="intv_appType == 'voice'" target="getProperties_initialize_ziqbiy"/>
+            <transition cond="true" target="initBHTT_initialize_ziqbiy"/>
+         </state>
+         <state id="getProperties_initialize_ziqbiy">
+            <onentry intv:abortonerror="true">
+               <assign location="_ws.session" expr="new Object()"/>
+               <vca:getProperties/>
+            </onentry>
+            <transition event="vca:*" target="initBHTT_initialize_ziqbiy">
+               <assign location="_ws.session" expr="_eventdata.session"/>
+               <icview:log text="action=leg:vca:*, type=InitializeSession, name=, id=initialize_ziqbiy, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml">
+                  <icview:result name="session" expr="_ws.session"/>
+               </icview:log>
+            </transition>
+         </state>
+         <state id="initBHTT_initialize_ziqbiy">
+            <onentry intv:abortonerror="true">
+               <cfg:translatetable location="_ws.DNIS_TT" tableName="'config/tt/DNIS_TT.tt'"
+                                   default="'ITBloodGas'"/>
+               <cfg:translatetable location="_ws.Endpoint_TT" tableName="'config/tt/Endpoint_TT.tt'"
+                                   default="'http://ridmv209/RSNIVRWS/ClarifyIVRWS.asmx'"/>
+               <cfg:translatetable location="_ws.EndpointVDN_TT" tableName="'config/tt/EndpointVDN_TT.tt'"
+                                   default="'http://ridmv209/RSNIVRWS/IVRVDNRoutingWS.asmx'"/>
+               <cfg:translatetable location="_ws.Options" tableName="'config/tt/Options.tt'" default="''"/>
+               <cfg:businesshours location="_ws.ITProductBH" tableName="'config/bh/ITProduct.bh'"/>
+               <cfg:businesshours location="_ws.MolecularBH" tableName="'config/bh/Molecular.bh'"/>
+               <cfg:businesshours location="_ws.BloodGasBH" tableName="'config/bh/BloodGas.bh'"/>
+               <cfg:businesshours location="_ws.ClinChemBH" tableName="'config/bh/ClinChem.bh'"/>
+               <cfg:businesshours location="_ws.SCC" tableName="'config/bh/SCC.bh'"/>
+            </onentry>
+            <transition target="calc_cedbuc">
+               <icview:log text="action=leg:default, type=InitializeSession, name=, id=initialize_ziqbiy, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+            </transition>
+         </state>
+      </state>
+      <state id="initializeend_qeyjip">
+         <onentry>
+            <icview:log text="action=entry, type=InitializeEndSession, name=, id=initializeend_qeyjip, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=InitializeEndSession, name=, id=initializeend_qeyjip, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="documentExit"/>
+      </state>
+      <state id="calc_cedbuc">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Calc_Endpoint, id=calc_cedbuc, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+            <assign location="_ws.endpointWS"
+                    expr="_ws.Endpoint_TT.translate(_ws.session.connection.host.toLowerCase())"/>
+            <assign location="_ws.endpointVDNWS"
+                    expr="_ws.EndpointVDN_TT.translate(_ws.session.connection.host.toLowerCase())"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Calc_Endpoint, id=calc_cedbuc, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true">
+               <icview:result name="_ws.endpointWS" expr="_ws.endpointWS"/>
+               <icview:result name="_ws.endpointVDNWS" expr="_ws.endpointVDNWS"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_reqzad">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="subroutineCall_sejfed">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/libRocheRSN_ClarifyWS/subroutines/process/_setEndpoint.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=ClarifyWS, id=subroutineCall_sejfed, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml">
+               <icview:param name="endpoint" expr="_ws.endpointWS"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=ClarifyWS, id=subroutineCall_sejfed, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/libRocheRSN_ClarifyWS/subroutines/process/_setEndpoint.scxml">
+            <param name="endpoint" expr="_ws.endpointWS"/>
+         </invoke>
+         <transition event="subroutineCall_sejfed.invoke.done"/>
+         <transition event="success" target="initializeend_qeyjip">
+            <icview:log text="action=leg:success, type=SubroutineCall, name=ClarifyWS, id=subroutineCall_sejfed, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </transition>
+      </state>
+      <state id="subroutineCall_reqzad">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/libRocheRSN_VDNWS/subroutines/process/_setEndpoint.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=VDNWS, id=subroutineCall_reqzad, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml">
+               <icview:param name="endpoint" expr="_ws.endpointVDNWS"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=VDNWS, id=subroutineCall_reqzad, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/libRocheRSN_VDNWS/subroutines/process/_setEndpoint.scxml">
+            <param name="endpoint" expr="_ws.endpointVDNWS"/>
+         </invoke>
+         <transition event="subroutineCall_reqzad.invoke.done"/>
+         <transition event="success" target="subroutineCall_sejfed">
+            <icview:log text="action=leg:success, type=SubroutineCall, name=VDNWS, id=subroutineCall_reqzad, document=/RocheRPS_Rexis/applications/voice/AsyncEvent.scxml"/>
+         </transition>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

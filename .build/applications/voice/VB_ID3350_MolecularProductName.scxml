@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 11:14:42.304 GMT-4--><!--Note: Components marked as 'debug' have not been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="blockEntry_lovxum"/>
+      </state>
+      <datamodel><!--Variables from declaration block: _Hd3ltG-UEeGtte0T2z7rbQ--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+         <data name="intv_noFieldsInitialized" expr="undefined"/>
+         <data name="intv_allFieldsInitialized" expr="undefined"/>
+         <data name="intv_atLeastOneSituationExecuted" expr="undefined"/>
+         <data name="intv_modalities" expr="undefined"/>
+         <data name="result" expr="undefined"/>
+         <data name="dummy" expr="undefined"/>
+      </datamodel>
+      <state id="blockEntry_lovxum">
+         <onentry>
+            <icview:log text="action=entry, type=BlockEntry, name=, id=blockEntry_lovxum, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=BlockEntry, name=, id=blockEntry_lovxum, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="script_cavtad"/>
+      </state>
+      <state id="goToBlock_feqkam">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_feqkam, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_feqkam, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="case_vuqhof">
+         <datamodel>
+            <data expr="false" name="case_expr_case_vuqhof"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=Case, name=GLOBAL, id=case_vuqhof, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml">
+               <icview:param name="TSS" value="'representative'"/>
+            </icview:log>
+            <assign location="case_expr_case_vuqhof" expr="result.result.GLOBAL"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Case, name=GLOBAL, id=case_vuqhof, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="case_expr_case_vuqhof == 'representative'" target="script_yohnag">
+            <icview:log text="action=leg:TSS, type=Case, name=GLOBAL, id=case_vuqhof, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+         <transition cond="true" target="case_piszom">
+            <icview:log text="action=leg:default, type=Case, name=GLOBAL, id=case_vuqhof, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_jompeb">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_jompeb, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_jompeb, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="script_quccuk">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_quccuk, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3350_MolecularProductName_amplilinkampliscreen_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_quccuk, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="log_lifbev"/>
+      </state>
+      <state id="goToBlock_megpur">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_ID3500_TaskCheck.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_megpur, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_megpur, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="log_lifbev">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_lifbev, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <log expr="'GotProductName = '+ _ws.gateKeeper.getBoolean(&#34;GotProductName&#34;)"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_lifbev, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_zizmub">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_lifbev, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+      </state>
+      <state id="script_yohnag">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_yohnag, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3350_MolecularProductName_representative_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_yohnag, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="log_vumney"/>
+      </state>
+      <state id="log_vumney">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_vumney, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <log expr="'EVENT - Customer asked for Agent or Pressed 0'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_vumney, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_bikcex">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_vumney, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+      </state>
+      <state id="log_yapwaz">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_yapwaz, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <log expr="'EVENT: Product Name Found.  Instrument Name: ' + _ws.instrumentName "
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_yapwaz, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_megpur">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_yapwaz, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_zizmub">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_zizmub, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="_ws.instrumentName" expr="result.result.CHOICE"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_zizmub, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true">
+               <icview:result name="_ws.instrumentName" expr="_ws.instrumentName"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_yapwaz">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="case_piszom">
+         <datamodel>
+            <data expr="false" name="case_expr_case_piszom"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=Case, name=, id=case_piszom, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml">
+               <icview:param name="ID3550_HamiltonDisambig" value="'hamilton'"/>
+               <icview:param name="RP9050_TransferMessages" value="'accuchek'"/>
+               <icview:param name="ID3650_CobasDisambig" value="'cobas'"/>
+            </icview:log>
+            <assign location="case_expr_case_piszom" expr="result.result.CHOICE"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Case, name=, id=case_piszom, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="case_expr_case_piszom == 'hamilton'" target="goToBlock_zeglop">
+            <icview:log text="action=leg:ID3550_HamiltonDisambig, type=Case, name=, id=case_piszom, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+         <transition cond="case_expr_case_piszom == 'accuchek'" target="script_dojquz">
+            <icview:log text="action=leg:RP9050_TransferMessages, type=Case, name=, id=case_piszom, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+         <transition cond="case_expr_case_piszom == 'cobas'" target="goToBlock_xekvap">
+            <icview:log text="action=leg:ID3650_CobasDisambig, type=Case, name=, id=case_piszom, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+         <transition cond="true" target="script_quccuk">
+            <icview:log text="action=leg:default, type=Case, name=, id=case_piszom, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_zeglop">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_ID3550_HamiltonDisabig.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_zeglop, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_zeglop, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="log_fabwav">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_fabwav, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <log expr="'EVENT: Product Name Found.  Instrument Name: ' + _ws.instrumentName "
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_fabwav, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_bophaw">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_fabwav, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_yavqos">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_yavqos, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="_ws.instrumentName" expr="''"/>
+            <assign location="dummy" expr="_ws.gateKeeper.setString(&#34;TransferReason&#34;,&#34;MaxErrors&#34;)"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_yavqos, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true">
+               <icview:result name="_ws.instrumentName" expr="_ws.instrumentName"/>
+               <icview:result name="dummy" expr="dummy"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_fabwav">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_bophaw">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_bophaw, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' -  Molecular Product Name max Speech Reco error'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_bophaw, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_feqkam">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_bikcex">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_bikcex, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' - Molecular Product Name caller asked for operator'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_bikcex, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_jompeb">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="script_cavtad">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_cavtad, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3350_MolecularProductName.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_cavtad, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_connil"/>
+      </state>
+      <state id="subroutineCall_connil">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/VoiceModule/subroutines/voice/VoiceModule.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_connil, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml">
+               <icview:param name="vm" expr="_ws.vm"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_connil, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/VoiceModule/subroutines/voice/VoiceModule.scxml">
+            <param name="vm" expr="_ws.vm"/>
+         </invoke>
+         <transition event="subroutineCall_connil.invoke.done"/>
+         <transition event="Success" target="case_vuqhof">
+            <assign location="result" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:Success, type=SubroutineCall, name=, id=subroutineCall_connil, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml">
+               <icview:result name="resultVariable" expr="result"/>
+            </icview:log>
+         </transition>
+         <transition event="Error" target="calc_yavqos">
+            <assign location="result" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:Error, type=SubroutineCall, name=, id=subroutineCall_connil, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml">
+               <icview:result name="resultVariable" expr="result"/>
+            </icview:log>
+         </transition>
+      </state>
+      <state id="script_dojquz">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_dojquz, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3350_MolecularProductName_accuchek_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_dojquz, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_deywuh"/>
+      </state>
+      <state id="goToBlock_deywuh">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_deywuh, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_deywuh, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="goToBlock_xekvap">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_ID3650_CobasDisambig.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_xekvap, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_xekvap, document=/RocheRPS_Rexis/applications/voice/VB_ID3350_MolecularProductName.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

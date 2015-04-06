@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="RP2300_LotNumber grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+
+<rule id="root" scope="public">
+  	
+	<one-of>
+		        
+        
+        <item> 
+            <one-of>
+			<item><ruleref uri="#lotNumber"/><tag>DATA=lotNumber.VALUE</tag></item>
+            </one-of>
+          
+			<tag>CHOICE='lotnumber'</tag>
+		</item>
+       
+        
+ </one-of>
+</rule>
+
+
+<rule id="lotNumber" scope="private">
+	<one-of>
+		<item><ruleref uri="#allDigits"/><tag>VALUE=allDigits.VALUE</tag></item>
+	</one-of>
+</rule>
+
+<rule id="allDigits" scope="private">
+	<one-of>
+		<item> <ruleref uri="#DIGSTRING3"/><tag>VALUE=DIGSTRING3.VALUE</tag></item>
+		<item> <ruleref uri="#DIGSTRING4"/><tag>VALUE=DIGSTRING4.VALUE</tag></item>
+		<item> <ruleref uri="#DIGSTRING5"/><tag>VALUE=DIGSTRING5.VALUE;SWI_disallow=1;</tag></item>
+		<item> <ruleref uri="#DIGSTRING6"/><tag>VALUE=DIGSTRING6.VALUE;SWI_disallow=1;</tag></item>
+		<item> <ruleref uri="#DIGSTRING7"/><tag>VALUE=DIGSTRING7.VALUE</tag></item>
+		<item> <ruleref uri="#DIGSTRING8"/><tag>VALUE=DIGSTRING8.VALUE</tag></item>
+	</one-of>
+</rule>
+
+<rule id="DIGSTRING3" scope="private">
+	<item> <ruleref uri="#digit"/><tag>VALUE=digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+</rule>
+
+<rule id="DIGSTRING4" scope="private">
+	<item> <ruleref uri="#digit"/><tag>VALUE=digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+</rule>
+
+<rule id="DIGSTRING5" scope="private">
+	<item> <ruleref uri="#digit"/><tag>VALUE=digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+</rule>
+
+<rule id="DIGSTRING6" scope="private">
+	<item> <ruleref uri="#digit"/><tag>VALUE=digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+</rule>
+
+<rule id="DIGSTRING7" scope="private">
+	<item> <ruleref uri="#digit"/><tag>VALUE=digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+</rule>
+
+<rule id="DIGSTRING8" scope="private">
+	<item> <ruleref uri="#digit"/><tag>VALUE=digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+	<item> <ruleref uri="#digit"/><tag>VALUE=VALUE + digit.VALUE</tag></item>
+</rule>
+	
+		
+<rule id="digit" scope="private">
+	<one-of>
+		<item> one 		<tag>VALUE='1'</tag></item>
+		<item> two 		<tag>VALUE='2'</tag></item>
+		<item> three 	<tag>VALUE='3'</tag></item>
+		<item> four 	<tag>VALUE='4'</tag></item>
+		<item> five 	<tag>VALUE='5'</tag></item>
+		<item> six 		<tag>VALUE='6'</tag></item>
+		<item> seven 	<tag>VALUE='7'</tag></item>
+		<item> eight 	<tag>VALUE='8'</tag></item>
+		<item> nine 	<tag>VALUE='9'</tag></item>
+		<item> zero 	<tag>VALUE='0'</tag></item>
+		<item weight="0.001"> oh <tag>VALUE='0'</tag></item>
+	</one-of>
+</rule>
+		
+</grammar>

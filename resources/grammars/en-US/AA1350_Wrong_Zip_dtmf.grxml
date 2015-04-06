@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar tag-format="semantics/1.0" mode="dtmf" root="root" version="1.0" xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar">
+<rule id="root">
+   <tag>out.DATA="";</tag>
+   <item repeat="5">
+      <ruleref uri="#digit"/>
+      <tag>out.DATA = out.DATA + rules.digit;</tag>
+   </item>
+</rule>
+<rule id="digit">
+   <one-of>
+      <item>0</item>
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+      <item>6</item>
+      <item>7</item>
+      <item>8</item>
+      <item>9</item>
+   </one-of>
+</rule>
+</grammar>

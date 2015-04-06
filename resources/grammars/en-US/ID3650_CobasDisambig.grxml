@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="ID3650_CobasDisambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_en-US.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	
+  <item repeat="0-1">
+  	<one-of>
+  		<item>um</item> <!-- Tuning Update DIR 9/27/12 -->
+  		<item>uh</item> <!-- Tuning Update DIR 9/27/12 -->
+  	</one-of>
+  </item>	
+  
+	<one-of>
+        <item> 
+            <one-of>
+			<item>list them</item>
+			<item>list them please</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='listthem'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c three eleven</item>
+			<item>cobas three eleven</item>
+			<item>cobas c three eleven</item>
+			<item>three eleven</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>c three one one</item> <!-- Tuning Update 9/28/12 -->
+			<item>cobas c three one one</item> <!-- Tuning Update 9/28/12 -->
+			<item>cobas three one one</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='c311'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c five oh one</item>
+			<item>cobas five oh one</item>
+			<item>cobas c five oh one</item>
+			<item>five oh one</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>hitachi five oh one</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>cobas c five zero one</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>the five oh one</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>a five zero one</item> <!-- Tuning Update 9/28/12 -->
+			<item>five zero one</item> <!-- Tuning Update 9/28/12 -->
+			<item>cobas five zero one</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='c501'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c five oh two</item>
+			<item>cobas five oh two</item>
+			<item>a five zero two</item> <!-- Tuning Update 9/28/12 -->
+			<item>cobas c five zero two</item> <!-- Tuning Update 9/28/12 -->
+			<item>c five zero two</item> <!-- Tuning Update 9/28/12 -->
+			<item>five zero two</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='c502'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c seven oh one</item>
+			<item>cobas seven oh one</item>
+            </one-of>
+          
+			<tag>CHOICE='c701'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c eight thousand</item>
+			<item>cobas eight thousand</item>
+			<item>eight thousand</item>
+			<item>cobas c eight thousand</item> <!-- Tuning Update 9/28/12 -->
+			<item>cobas c eight zero zero zero</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='c8000'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c six thousand</item>
+			<item>cobas six thousand</item>
+			<item>six thousand</item>
+			<item>roche six thousand</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>c o b a s six thousand</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>six thousand</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>the cobas six thousand</item> <!-- Tuning Update DIR 9/27/12 -->
+
+            </one-of>
+          
+			<tag>CHOICE='c6000'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>c one eleven</item>
+			<item>cobas c one eleven</item>
+			<item>c one one one</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='c111'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas integra</item>
+			<item>integra</item> <!-- Tuning Change DIR 09/12/12 -->
+			<item>the cobas integra</item> <!-- Tuning Change DIR 09/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobasintegra'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>integra four hundred</item>
+			<item>i four hundred</item>
+			<item>cobas integra four hundred</item>
+			<item>cobas integra i four hundred</item>
+			<item>four hundred</item> <!-- Tuning Change DIR 09/27/12 -->
+			<item>roche integra four hundred</item> <!-- Tuning Change DIR 09/27/12 -->
+			<item>roche integra</item> <!-- Tuning Change DIR 09/27/12 -->
+			<item>the cobas integra four hundred</item> <!-- Tuning Change DIR 09/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='integra400'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>integra four hundred plus</item>
+			<item>i four hundred plus</item>
+			<item>cobas integra four hundred plus</item>
+			<item>cobas i four hundred plus</item>
+			<item>cobas four hundred</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas four hundred integra</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas four hundred plus</item> <!-- Tuning Update DIR 9/27/12 -->
+
+            </one-of>
+          
+			<tag>CHOICE='integra400plus'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>integra seven hundred</item>
+			<item>i seven hundred</item>
+			<item>cobas seven hundred</item>
+			<item>cobas i seven hundred</item>
+            </one-of>
+          
+			<tag>CHOICE='integra700'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>integra eight hundred</item>
+			<item>i eight hundred</item>
+			<item>cobas integra eight hundred</item>
+			<item>cobas i eight hundred</item>
+			<item>cobas eight hundred</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>the integra eight hundred</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='integra800'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>integra interface</item>
+			<item>integra host communication</item>
+			<item>integra host interface</item>
+			<item>cobas integra interface</item>
+            </one-of>
+          
+			<tag>CHOICE='integrainterface'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas p five twelve</item>
+			<item>p v t</item>
+			<item>p five twelve</item> <!-- Tuning Update 9/28/12 -->
+			<item>five twelve</item> <!-- Tuning Update 9/28/12 -->
+			<item>five one two</item> <!-- Tuning Update 9/28/12 -->
+			<item>p five one two</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobasp512'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas p six twelve</item>
+			<item>p six twelve</item> <!-- Tuning Update 9/28/12 -->
+			<item>six twelve</item> <!-- Tuning Update 9/28/12 -->
+			<item>six one two</item> <!-- Tuning Update 9/28/12 -->
+			<item>p six one two</item> <!-- Tuning Update 9/28/12 -->
+			<item>cobas p six one two</item> <!-- Tuning Update 9/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobasp612'</tag>
+		</item>
+       
+       
+        <item> 
+            <one-of>
+			<item>firewall</item>
+			<item>roche product firewall</item>
+			<item>cobas itfirewall</item>
+            </one-of>
+          
+			<tag>CHOICE='itfirewall'</tag>
+		</item>
+       
+       
+        <item> 
+            <one-of>
+			<item>cobas c seven zero two</item>
+			<item>c seven zero two</item>
+			<item>cobas c seven oh two</item>
+			<item>c seven oh two</item>
+			<item>seven zero two</item>
+			<item>seven oh two</item>
+            </one-of>
+          
+			<tag>CHOICE='c702'</tag>
+		</item>   
+		
+        <item> 
+            <one-of>
+			<item>cobas p three twelve</item>
+			<item>p three twelve</item>
+			<item>p three one two</item>
+            </one-of>
+          
+			<tag>CHOICE='p312'</tag>
+		</item>   
+		
+		
+		<item> 
+            <one-of>
+			<item>mira</item>
+			<item>mira plus</item>
+			<item>cobas mira</item>
+			<item>cobas mira plus</item>
+            </one-of>
+          
+			<tag>CHOICE='cobasmira'</tag>
+		</item>	
+       
+        <item> 
+            <one-of>
+			<item>cobas ampliprep</item>
+			<item>ampliprep</item>
+			<item>ampliprep taqman</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas ampliprep ninety six</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>roche ampliprep</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>the ampliprep</item> <!-- Tuning Update DIR 9/27/12 --> 
+            </one-of>
+          
+			<tag>CHOICE='ampliprep'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas amplicor</item>
+			<item>amplicor</item>
+			<item>roche amplicor</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='amplicor'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas forty eight hundred</item>
+			<item>forty eight hundred</item>
+			<item>four eighty z</item>
+			<item>four eighty x</item>
+			<item>cobas taqman forty eight</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>cobas forty eight zero</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas x four eight zero</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas x four eighty</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>x four eight zero</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>x four eighty</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>cobas x</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z four eighty</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>z four eighty</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z four eight zero zero</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>z four eight zero zero</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas z four eight oh oh</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>z four eight oh oh</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobas4800'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>i t one thousand</item>
+			<item>cobas i t one thousand</item>
+            </one-of>
+          
+			<tag>CHOICE='it1000'</tag>
+		</item>  
+       
+        <item> 
+            <one-of>
+			<item>omni s</item>
+			<item>cobas two two one</item>
+			<item>cobas b two two one</item>
+			<item>b two twenty one</item>
+			<item>cobas b two twenty one</item>
+			<item>b two two one</item>
+			<item>s two</item>
+			<item>s four</item>
+			<item>s six</item>
+			<item>omni</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>a v l omni</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>uh omni s</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='omnis'</tag>
+		</item> 
+       
+        <item> 
+            <one-of>
+			<item>taqman</item>
+			<item>taqman forty eight</item>
+			<item>taqman ninety six</item>
+			<item>cobas taqman</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>cobas taqman forty eight</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas taqman fourty eight analyzer</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='taqman'</tag>
+		</item> 
+        
+ </one-of>
+</rule>
+
+</grammar>

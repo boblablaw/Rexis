@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Application Upgrader version 1.6.0.201011231509 at 2012-06-01 14:55:52.905 GMT-4--><!--Created by Application Upgrader version 1.6.0.201011231509 at 2012-06-01 14:55:32.750 GMT-4--><!--Created by Application Upgrader version 1.6.0.201011231509 at 2012-06-01 14:51:45.288 GMT-4--><notation:Diagram xmlns:xmi="http://www.omg.org/XMI" xmlns:icxml="http://www.intervoice.com/icxml"
+                  xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation"
+                  xmi:version="2.0"
+                  xmi:id="_T_LXsh6KEeCmXNWSPyAURA"
+                  type="Icxml"
+                  name="Event.diagram"
+                  measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_T_LXuR6KEeCmXNWSPyAURA" type="2020">
+      <children xmi:type="notation:DecorationNode" xmi:id="_T_LXux6KEeCmXNWSPyAURA" type="5020">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_T_LXvB6KEeCmXNWSPyAURA" y="5"/>
+      </children>
+      <element xmi:type="icxml:EventProcess" href="Event.icxml#_T_LXuB6KEeCmXNWSPyAURA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T_LXuh6KEeCmXNWSPyAURA" x="24" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_T_LXxh6KEeCmXNWSPyAURA" type="2022">
+      <children xmi:type="notation:DecorationNode" xmi:id="_T_LXyB6KEeCmXNWSPyAURA" type="5022">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_T_LXyR6KEeCmXNWSPyAURA" y="5"/>
+      </children>
+      <element xmi:type="icxml:EventEntry" href="Event.icxml#_T_LXxR6KEeCmXNWSPyAURA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T_LXxx6KEeCmXNWSPyAURA" x="144" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_T_LX0x6KEeCmXNWSPyAURA" type="2021">
+      <children xmi:type="notation:DecorationNode" xmi:id="_T_LX1R6KEeCmXNWSPyAURA" type="5021">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_T_LX1h6KEeCmXNWSPyAURA" y="5"/>
+      </children>
+      <element xmi:type="icxml:EventReturn" href="Event.icxml#_T_LX0h6KEeCmXNWSPyAURA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_T_LX1B6KEeCmXNWSPyAURA" x="264" y="24"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_T_LXsx6KEeCmXNWSPyAURA"/>
+  <element xmi:type="icxml:RootType" href="Event.icxml#_T_LXsR6KEeCmXNWSPyAURA"/>
+  <edges xmi:type="notation:Connector" xmi:id="_T_LXzR6KEeCmXNWSPyAURA" type="4002"
+          source="_T_LXuR6KEeCmXNWSPyAURA"
+          target="_T_LXxh6KEeCmXNWSPyAURA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_T_LX0B6KEeCmXNWSPyAURA" type="6002">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_T_LX0R6KEeCmXNWSPyAURA" y="7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_T_LXzh6KEeCmXNWSPyAURA"/>
+      <element xmi:type="icxml:ConditionalConnection"
+               href="Event.icxml#_T_LXzB6KEeCmXNWSPyAURA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_T_LXzx6KEeCmXNWSPyAURA"
+                  points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_T_LX2h6KEeCmXNWSPyAURA" type="4001"
+          source="_T_LXxh6KEeCmXNWSPyAURA"
+          target="_T_LX0x6KEeCmXNWSPyAURA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_T_LX3R6KEeCmXNWSPyAURA" type="6001">
+         <layoutConstraint xmi:type="notation:Location" xmi:id="_T_LX3h6KEeCmXNWSPyAURA" y="7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_T_LX2x6KEeCmXNWSPyAURA"/>
+      <element xmi:type="icxml:DefaultConnection" href="Event.icxml#_T_LX2R6KEeCmXNWSPyAURA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_T_LX3B6KEeCmXNWSPyAURA"
+                  points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+</notation:Diagram>

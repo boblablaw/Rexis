@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="dtmf" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="RP2300_LotNumber_dtmf grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+
+<rule id="root" scope="public">
+  	
+	<one-of>
+		        
+        
+        <item> 
+            <one-of>
+			<item><ruleref uri="#lotNumber"/><tag>DATA=lotNumber.VALUE</tag></item>
+            </one-of>
+          
+			<tag>CHOICE='lotnumber'</tag>
+		</item>
+       
+        
+ </one-of>
+</rule>
+
+
+<rule id="lotNumber" scope="private">
+	<one-of>
+		<item><ruleref uri="#allDigits"/><tag>VALUE=allDigits.VALUE</tag></item>
+	</one-of>
+</rule>
+
+<rule id="allDigits" scope="private">
+	<tag>VALUE='';</tag>
+	<one-of>
+		<item repeat="3-8"> <ruleref uri="#digit"/><tag>VALUE=VALUE+digit.VALUE</tag></item>
+	</one-of>
+</rule>
+
+		
+<rule id="digit" scope="private">
+	<one-of>
+		<item> 1	<tag>VALUE='1'</tag></item>
+		<item> 2	<tag>VALUE='2'</tag></item>
+		<item> 3 	<tag>VALUE='3'</tag></item>
+		<item> 4 	<tag>VALUE='4'</tag></item>
+		<item> 5 	<tag>VALUE='5'</tag></item>
+		<item> 6	<tag>VALUE='6'</tag></item>
+		<item> 7 	<tag>VALUE='7'</tag></item>
+		<item> 8 	<tag>VALUE='8'</tag></item>
+		<item> 9 	<tag>VALUE='9'</tag></item>
+		<item> 0 	<tag>VALUE='0'</tag></item>
+	</one-of>
+</rule>
+
+<rule id="letter" scope="private">
+	<one-of>
+		<item> 21 <tag>VALUE='A'</tag></item>
+		<item> 22 <tag>VALUE='B'</tag></item>
+		<item> 23 <tag>VALUE='C'</tag></item>
+		<item> 31 <tag>VALUE='D'</tag></item>
+		<item> 32 <tag>VALUE='E'</tag></item>
+		<item> 33 <tag>VALUE='F'</tag></item>
+		<item> 41 <tag>VALUE='G'</tag></item>
+		<item> 42 <tag>VALUE='H'</tag></item>
+		<item> 43 <tag>VALUE='I'</tag></item>
+		<item> 51 <tag>VALUE='J'</tag></item>
+		<item> 52 <tag>VALUE='K'</tag></item>
+		<item> 53 <tag>VALUE='L'</tag></item>
+		<item> 61 <tag>VALUE='M'</tag></item>
+		<item> 62 <tag>VALUE='N'</tag></item>
+		<item> 63 <tag>VALUE='O'</tag></item>
+		<item> 71 <tag>VALUE='P'</tag></item>
+		<item> 72 <tag>VALUE='Q'</tag></item>
+		<item> 73 <tag>VALUE='R'</tag></item>
+		<item> 74 <tag>VALUE='S'</tag></item>
+		<item> 81 <tag>VALUE='T'</tag></item>
+		<item> 82 <tag>VALUE='U'</tag></item>
+		<item> 83 <tag>VALUE='V'</tag></item>
+		<item> 91 <tag>VALUE='W'</tag></item>
+		<item> 92 <tag>VALUE='X'</tag></item>
+		<item> 93 <tag>VALUE='Y'</tag></item>
+		<item> 94 <tag>VALUE='Z'</tag></item>
+	</one-of>
+</rule>
+		
+</grammar>

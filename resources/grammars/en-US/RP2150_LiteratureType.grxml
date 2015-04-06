@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="RP2150_LiteratureType grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+
+<rule id="root" scope="public">
+  	
+	<one-of>
+		        
+        
+        <item> 
+            <one-of>
+			<item>calibrator value sheet</item>
+			<item>q c information</item>
+			<item>calcheck</item> <!-- Tuning Update DIR 09/12/12 -->
+			<item>quality control</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>calcheck values</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>normal values</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>calcheck insert</item> <!-- Tuning Update DIR 09/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='calibrationandqc'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>application bar code</item>
+            </one-of>
+          
+			<tag>CHOICE='applicationbarcode'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>application information</item>
+			<item>package insert</item>
+			<item>application sheet</item>
+			<item>p i</item>
+			<item>app sheet</item>
+			<item>pack insert</item>
+			<item>catalogue numbers</item> <!-- Tuning Update DIR 09/12/12 -->
+			<item>general information</item> <!-- Tuning Update DIR 09/12/12 -->
+			<item>validation studies</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>studies</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>methodology</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>catalogue number</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>reagent catalogue number</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>insert</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>product insert</item> <!-- Tuning Update DIR 09/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='applicationinformation'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>bar code specifications</item>
+			<item>bar code specs</item>
+            </one-of>
+          
+			<tag>CHOICE='barcodespecifications'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>customer bulletin</item>
+			<item>c b</item>
+            </one-of>
+          
+			<tag>CHOICE='customerbulletin'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>customer letters</item>
+            </one-of>
+          
+			<tag>CHOICE='customerletters'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>f a qs</item>
+			<item>f a q</item>
+			<item>frequently asked questions</item>
+            </one-of>
+          
+			<tag>CHOICE='faq'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>host interface</item>
+			<item>data manager</item>
+			<item>teleservice</item>
+			<item>d i interface</item>
+			<item>instrument manager</item>
+			<item>host transmission specification</item> <!-- Tuning Update DIR 09/12/12 -->
+            </one-of>
+          
+			<tag>CHOICE='hostinterface'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>installation guide</item>
+			<item>install guide</item>
+            </one-of>
+          
+			<tag>CHOICE='installationguides'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>instrument list</item>
+            </one-of>
+          
+			<tag>CHOICE='instrumentlist'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>lab procedure manuals</item>
+			<item>s o p</item> <!-- Tuning Update DIR 09/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='labproceduremanuals'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>maintenance log</item>
+            </one-of>
+          
+			<tag>CHOICE='maintenancelog'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>m s d s</item>
+			<item>material safety data sheets</item>
+			<item>material safety data sheet</item>
+            </one-of>
+          
+			<tag>CHOICE='msds'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>operator manual</item>
+			<item>op manual</item>
+			<item>manual</item> <!-- Tuning Update DIR 09/12/12 -->
+			<item>technical specs</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>specifications</item> <!-- Tuning Update DIR 09/27/12 -->
+			<item>maintenance</item> <!-- Tuning Update DIR 09/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='operatormanual'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>product lists</item>
+            </one-of>
+          
+			<tag>CHOICE='productlists'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>quick reference</item>
+			<item>quick reference guide</item>
+			<item>reference guide</item>
+			<item>quick guide</item>
+            </one-of>
+          
+			<tag>CHOICE='quickreferenceguide'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>short guides</item>
+			<item>short guide</item>
+            </one-of>
+          
+			<tag>CHOICE='shortguides'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>software patch table</item>
+            </one-of>
+          
+			<tag>CHOICE='softwarepatchtable'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>training</item>
+			<item>training guide</item>
+            </one-of>
+          
+			<tag>CHOICE='training'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>troubleshooting guides</item>
+			<item>troubleshooting guide</item>
+			<item>instruction sheet</item> <!-- Tuning Update DIR 09/12/12 -->
+            </one-of>
+          
+			<tag>CHOICE='troubleshootingguides'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>technical support</item> <!-- Tuning Update DIR 09/29/12 -->
+			<item>tech support</item> <!-- Tuning Update DIR 09/29/12 -->
+			<item>service contract</item> <!-- Tuning Update DIR 09/29/12 -->
+			<item>support</item> <!-- Tuning Update DIR 09/29/12 -->
+			<item>service</item> <!-- Tuning Update DIR 09/29/12 -->
+            </one-of>
+          
+			<tag>CHOICE='techsupport'</tag> <!-- Tuning Update DIR 09/29/12 -->
+		</item>
+       
+        
+ </one-of>
+</rule>
+
+</grammar>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lexicon xml:lang="en-US" alphabet="application/sampa;localization=nuance">
+
+
+<!-- the following entries are approximations of the Spanish 'espanol' -->
+<entry key="espanol">
+    <definition value="espQnj@Wl"/>
+    <definition value="espVnj@Wl"/>
+    <definition value="espQni@Wl"/>
+    <definition value="espVni@Wl"/>
+    <definition value="IspQnj@Wl"/>
+    <definition value="IspVnj@Wl"/>
+    <definition value="IspQni@Wl"/>
+    <definition value="IspVni@Wl"/>
+</entry>
+
+<!-- the following entries, except for the last value, are approximations of the Spanish 'favor' as in 'por favor' -->
+<entry key="favor">
+    <definition value="fQv@Wr" />
+    <definition value="fQvOr" />
+    <definition value="fQbOr" />
+    <definition value="fQb@Wr" />
+    <definition value="feYv3:" />
+</entry>
+
+</lexicon>
+

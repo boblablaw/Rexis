@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://roche.com/ws/ClarifyIVRWS/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://roche.com/ws/ClarifyIVRWS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://roche.com/ws/ClarifyIVRWS/">
+      <s:element name="CaseLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="caseID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CaseLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaseLookupResult" type="tns:ClarifyCaseLookup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClarifyCaseLookup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstrumentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AccountLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountLookupResult" type="tns:ClarifyAccountLookup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClarifyAccountLookup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountFound" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SerialLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SerialLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SerialLookupResult" type="tns:ClarifySerialLookup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClarifySerialLookup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstrumentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AccountSerialLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountSerialLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountSerialLookupResult" type="tns:ClarifyAccountSerialLookup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClarifyAccountSerialLookup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InstrumentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CaseLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:CaseLookup" />
+  </wsdl:message>
+  <wsdl:message name="CaseLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:CaseLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountLookup" />
+  </wsdl:message>
+  <wsdl:message name="AccountLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SerialLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:SerialLookup" />
+  </wsdl:message>
+  <wsdl:message name="SerialLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:SerialLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountSerialLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountSerialLookup" />
+  </wsdl:message>
+  <wsdl:message name="AccountSerialLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountSerialLookupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClarifyIVRWSSoap">
+    <wsdl:operation name="CaseLookup">
+      <wsdl:input message="tns:CaseLookupSoapIn" />
+      <wsdl:output message="tns:CaseLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountLookup">
+      <wsdl:input message="tns:AccountLookupSoapIn" />
+      <wsdl:output message="tns:AccountLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SerialLookup">
+      <wsdl:input message="tns:SerialLookupSoapIn" />
+      <wsdl:output message="tns:SerialLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountSerialLookup">
+      <wsdl:input message="tns:AccountSerialLookupSoapIn" />
+      <wsdl:output message="tns:AccountSerialLookupSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClarifyIVRWSSoap" type="tns:ClarifyIVRWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CaseLookup">
+      <soap:operation soapAction="http://roche.com/ws/ClarifyIVRWS/CaseLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountLookup">
+      <soap:operation soapAction="http://roche.com/ws/ClarifyIVRWS/AccountLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SerialLookup">
+      <soap:operation soapAction="http://roche.com/ws/ClarifyIVRWS/SerialLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountSerialLookup">
+      <soap:operation soapAction="http://roche.com/ws/ClarifyIVRWS/AccountSerialLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClarifyIVRWSSoap12" type="tns:ClarifyIVRWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CaseLookup">
+      <soap12:operation soapAction="http://roche.com/ws/ClarifyIVRWS/CaseLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountLookup">
+      <soap12:operation soapAction="http://roche.com/ws/ClarifyIVRWS/AccountLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SerialLookup">
+      <soap12:operation soapAction="http://roche.com/ws/ClarifyIVRWS/SerialLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountSerialLookup">
+      <soap12:operation soapAction="http://roche.com/ws/ClarifyIVRWS/AccountSerialLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClarifyIVRWS">
+    <wsdl:port name="ClarifyIVRWSSoap" binding="tns:ClarifyIVRWSSoap">
+      <soap:address location="http://ridmv664/ClarifyIVRWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClarifyIVRWSSoap12" binding="tns:ClarifyIVRWSSoap12">
+      <soap12:address location="http://ridmv664/ClarifyIVRWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 11:14:42.201 GMT-4--><!--Note: Components marked as 'debug' have not been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="blockEntry_gahyus"/>
+      </state>
+      <datamodel><!--Variables from declaration block: _jURyEA4oEeKaCsGQlZgx1Q--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+         <data name="intv_noFieldsInitialized" expr="undefined"/>
+         <data name="intv_allFieldsInitialized" expr="undefined"/>
+         <data name="intv_atLeastOneSituationExecuted" expr="undefined"/>
+         <data name="intv_modalities" expr="undefined"/>
+         <data name="dummy" expr="undefined"/>
+         <data name="result" expr="undefined"/>
+      </datamodel>
+      <state id="blockEntry_gahyus">
+         <onentry>
+            <icview:log text="action=entry, type=BlockEntry, name=, id=blockEntry_gahyus, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=BlockEntry, name=, id=blockEntry_gahyus, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="script_havnaq"/>
+      </state>
+      <state id="script_havnaq">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_havnaq, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3650_CobasDisambig.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_havnaq, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_linqiv"/>
+      </state>
+      <state id="subroutineCall_linqiv">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/VoiceModule/subroutines/voice/VoiceModule.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_linqiv, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml">
+               <icview:param name="vm" expr="_ws.vm"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_linqiv, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/VoiceModule/subroutines/voice/VoiceModule.scxml">
+            <param name="vm" expr="_ws.vm"/>
+         </invoke>
+         <transition event="subroutineCall_linqiv.invoke.done"/>
+         <transition event="Success" target="case_foryoq">
+            <assign location="result" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:Success, type=SubroutineCall, name=, id=subroutineCall_linqiv, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml">
+               <icview:result name="resultVariable" expr="result"/>
+            </icview:log>
+         </transition>
+         <transition event="Error" target="calc_xoqdas">
+            <assign location="result" expr="_eventdata.intv_returnObject"/>
+            <icview:log text="action=leg:Error, type=SubroutineCall, name=, id=subroutineCall_linqiv, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml">
+               <icview:result name="resultVariable" expr="result"/>
+            </icview:log>
+         </transition>
+      </state>
+      <state id="case_foryoq">
+         <datamodel>
+            <data expr="false" name="case_expr_case_foryoq"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=Case, name=GLOBAL, id=case_foryoq, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml">
+               <icview:param name="TSS" value="'representative'"/>
+            </icview:log>
+            <assign location="case_expr_case_foryoq" expr="result.result.GLOBAL"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Case, name=GLOBAL, id=case_foryoq, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="case_expr_case_foryoq == 'representative'" target="script_giypix">
+            <icview:log text="action=leg:TSS, type=Case, name=GLOBAL, id=case_foryoq, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+         <transition cond="true" target="case_vefyud">
+            <icview:log text="action=leg:default, type=Case, name=GLOBAL, id=case_foryoq, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state id="case_vefyud">
+         <datamodel>
+            <data expr="false" name="case_expr_case_vefyud"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=Case, name=CHOICE, id=case_vefyud, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml">
+               <icview:param name="List" value="'listthem'"/>
+            </icview:log>
+            <assign location="case_expr_case_vefyud" expr="result.result.CHOICE"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Case, name=CHOICE, id=case_vefyud, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="case_expr_case_vefyud == 'listthem'" target="script_sigxul">
+            <icview:log text="action=leg:List, type=Case, name=CHOICE, id=case_vefyud, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+         <transition cond="true" target="script_wewnoh">
+            <icview:log text="action=leg:default, type=Case, name=CHOICE, id=case_vefyud, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state id="script_giypix">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_giypix, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3650_CobasDisambig_representative_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_giypix, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="log_likpaw"/>
+      </state>
+      <state id="goToBlock_sivmoc">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_sivmoc, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_sivmoc, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="script_sigxul">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_sigxul, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3650_CobasDisambig_listthem_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_sigxul, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_qevtej"/>
+      </state>
+      <state id="subroutineCall_qevtej">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/VoiceModule/subroutines/voice/PlayPromptSubroutine.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_qevtej, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml">
+               <icview:param name="promptConfig" expr="_ws.pl"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_qevtej, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/VoiceModule/subroutines/voice/PlayPromptSubroutine.scxml">
+            <param name="promptConfig" expr="_ws.pl"/>
+         </invoke>
+         <transition event="subroutineCall_qevtej.invoke.done"/>
+         <transition event="DONE" target="goToTarget_gilqux">
+            <icview:log text="action=leg:DONE, type=SubroutineCall, name=, id=subroutineCall_qevtej, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+         <transition event="ERROR" target="goToTarget_gilqux">
+            <icview:log text="action=leg:ERROR, type=SubroutineCall, name=, id=subroutineCall_qevtej, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state xmlns:ccxml="http://www.intervoice.com/sce/action/ccxml" id="goToTarget_gilqux">
+         <onentry>
+            <icview:log text="action=entry, type=GoToTarget, name=, id=goToTarget_gilqux, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GoToTarget, name=, id=goToTarget_gilqux, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="subroutineCall_linqiv">
+            <icview:log text="action=leg:tunnel, type=GoToTarget, name=, id=goToTarget_gilqux, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state id="log_romfek">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_romfek, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <log expr="'EVENT: Product Name Not Found. Speech Error'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_romfek, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_mepdiy">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_romfek, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_xoqdas">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_xoqdas, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="_ws.instrumentName" expr="''"/>
+            <assign location="dummy" expr="_ws.gateKeeper.setString(&#34;TransferReason&#34;,&#34;MaxErrors&#34;)"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_xoqdas, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true">
+               <icview:result name="_ws.instrumentName" expr="_ws.instrumentName"/>
+               <icview:result name="dummy" expr="dummy"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_romfek">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_mepdiy">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_mepdiy, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' -  Cobas Disambig Product Name max Speech Reco error'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_mepdiy, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_hunsal">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="goToBlock_hunsal">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP9050_TransferMessages.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_hunsal, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_hunsal, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="log_likpaw">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_likpaw, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <log expr="'EVENT - Customer asked for Agent or Pressed 0'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_likpaw, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_fecqir">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_likpaw, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_fecqir">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_fecqir, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="_ws.instrumentName" expr="'ERROR'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_fecqir, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true">
+               <icview:result name="_ws.instrumentName" expr="_ws.instrumentName"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_luklil">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_luklil">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=Notes, id=calc_luklil, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="_ws.ivrNotes"
+                    expr="_ws.ivrNotes + ' - Cobas Disambig Product Name caller asked for operator'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=Notes, id=calc_luklil, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true">
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_sivmoc">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="calc_yabcec">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_yabcec, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="_ws.instrumentName" expr="result.result.CHOICE"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_yabcec, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true">
+               <icview:result name="_ws.instrumentName" expr="_ws.instrumentName"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_gikkar">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_gikkar">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=Event, id=log_gikkar, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <log expr="'EVENT: Product Name Found.  Instrument Name: ' + _ws.instrumentName "
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=Event, id=log_gikkar, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_mohjur">
+            <icview:log text="action=leg:default, type=Log, name=Event, id=log_gikkar, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_mohjur">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_ID3500_TaskCheck.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_mohjur, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_mohjur, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="script_wewnoh">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_wewnoh, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/ID3650_CobasDisambig_c111_ACTION_1.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_wewnoh, document=/RocheRPS_Rexis/applications/voice/VB_ID3650_CobasDisambig.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_yabcec"/>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

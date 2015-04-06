@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:icxml="http://www.intervoice.com/icxml" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_8x-AUm9qEeGtte0T2z7rbQ" type="Icxml" name="VB_RP9000_AllInfoCollected.diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_8x-AXW9qEeGtte0T2z7rbQ" type="2047">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8x-AX29qEeGtte0T2z7rbQ" type="5047">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8x-AYG9qEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:FunctionalBlockEntry" href="VB_RP9000_AllInfoCollected.icxml#_8x-AXG9qEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8x-AXm9qEeGtte0T2z7rbQ" x="24" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_-cWeg29qEeGtte0T2z7rbQ" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="_-cWehW9qEeGtte0T2z7rbQ" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-cWehm9qEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_RP9000_AllInfoCollected.icxml#_-cWegG9qEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-cWehG9qEeGtte0T2z7rbQ" x="120" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_C2knE29rEeGtte0T2z7rbQ" type="2024">
+    <children xmi:type="notation:DecorationNode" xmi:id="_C2knFm9rEeGtte0T2z7rbQ" type="5024">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_C2knF29rEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_C2knFG9rEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:SubroutineCall" href="VB_RP9000_AllInfoCollected.icxml#_C2knEG9rEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C2knFW9rEeGtte0T2z7rbQ" x="240" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_F-Ysk29rEeGtte0T2z7rbQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_F-Yslm9rEeGtte0T2z7rbQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F-Ysl29rEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_F-YslG9rEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_RP9000_AllInfoCollected.icxml#_F-YskG9rEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F-YslW9rEeGtte0T2z7rbQ" x="360" y="24" width="0" height="0"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8x-AU29qEeGtte0T2z7rbQ"/>
+  <element xmi:type="icxml:RootType" href="VB_RP9000_AllInfoCollected.icxml#_8x-AUW9qEeGtte0T2z7rbQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="__NFX4W9qEeGtte0T2z7rbQ" type="4001" source="_8x-AXW9qEeGtte0T2z7rbQ" target="_-cWeg29qEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="__NFX5G9qEeGtte0T2z7rbQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__NFX5W9qEeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="__NFX4m9qEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_RP9000_AllInfoCollected.icxml#__NFX4G9qEeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__NFX429qEeGtte0T2z7rbQ" points="[29, 3, -67, 3]$[125, 22, 29, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_DhVbUW9rEeGtte0T2z7rbQ" type="4001" source="_-cWeg29qEeGtte0T2z7rbQ" target="_C2knE29rEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DhVbVG9rEeGtte0T2z7rbQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DhVbVW9rEeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_DhVbUm9rEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_RP9000_AllInfoCollected.icxml#_DhVbUG9rEeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DhVbU29rEeGtte0T2z7rbQ" points="[29, -2, -91, -2]$[90, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_HGEGUW9rEeGtte0T2z7rbQ" type="4002" source="_C2knE29rEeGtte0T2z7rbQ" target="_F-Ysk29rEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_HGEGVG9rEeGtte0T2z7rbQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HGEGVW9rEeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_HGEGUm9rEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_RP9000_AllInfoCollected.icxml#_HGEGUG9rEeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HGEGU29rEeGtte0T2z7rbQ" points="[29, -3, -91, -3]$[90, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Hm_pIW9rEeGtte0T2z7rbQ" type="4002" source="_C2knE29rEeGtte0T2z7rbQ" target="_F-Ysk29rEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Hm_pJG9rEeGtte0T2z7rbQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Hm_pJW9rEeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Hm_pIm9rEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_RP9000_AllInfoCollected.icxml#_Hm_pIG9rEeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Hm_pI29rEeGtte0T2z7rbQ" points="[29, -3, -91, -3]$[90, -22, -30, -22]"/>
+  </edges>
+</notation:Diagram>

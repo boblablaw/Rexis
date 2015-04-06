@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains xmlns="http://www.intervoice.com/schema/property/3.0">
+  <audit savedby="IC Translate Table" timestamp="Mon Jan 26 14:44:03 EST 2015" version="3.0.0.0"/>
+  <domain allow-add="false" displayable="true" domain-type="TT" id="" preprocessor="application/ecmascript">
+    <description value="IC Translate Table"/>
+    <display-name value="DNIS.tt"/>
+    <property key="3175231705">
+      <app-value value="'ClinChem'"/>
+      <description value="DNIS for Clinical Chemistry Stage"/>
+    </property>
+    <property key="3175231805">
+      <app-value value="'ClinChem'"/>
+      <description value="DNIS for Clinical Chemistry Side A"/>
+    </property>
+    <property key="3175231905">
+      <app-value value="'ClinChem'"/>
+      <description value="DNIS for Clinical Chemistry Side B"/>
+    </property>
+    <property key="3175231708">
+      <app-value value="'Molecular'"/>
+      <description value="DNIS for Molecular Stage"/>
+    </property>
+    <property key="3175231808">
+      <app-value value="'Molecular'"/>
+      <description value="DNIS for Molecular Side A"/>
+    </property>
+    <property key="3175231908">
+      <app-value value="'Molecular'"/>
+      <description value="DNIS for Molecular Side B"/>
+    </property>
+    <property key="3175231709">
+      <app-value value="'ITBloodGas'"/>
+      <description value="DNIS for IT Blood Gas Stage"/>
+    </property>
+    <property key="3175231809">
+      <app-value value="'ITBloodGas'"/>
+      <description value="DNIS for IT Blood Gas Side A"/>
+    </property>
+    <property key="3175231909">
+      <app-value value="'ITBloodGas'"/>
+      <description value="DNIS for IT Blood Gas Side B"/>
+    </property>
+  </domain>
+</domains>

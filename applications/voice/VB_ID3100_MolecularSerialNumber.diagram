@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:icxml="http://www.intervoice.com/icxml" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_kgDKMm-OEeGtte0T2z7rbQ" type="Icxml" name="VB_ID3100_MolecularSerialNumber.diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_kgDKPW-OEeGtte0T2z7rbQ" type="2047">
+    <children xmi:type="notation:DecorationNode" xmi:id="_kgDKP2-OEeGtte0T2z7rbQ" type="5047">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kgDKQG-OEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:FunctionalBlockEntry" href="VB_ID3100_MolecularSerialNumber.icxml#_kgDKPG-OEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kgDKPm-OEeGtte0T2z7rbQ" x="24" y="24"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_0eq4I2-QEeGtte0T2z7rbQ" type="2024">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0eq4Jm-QEeGtte0T2z7rbQ" type="5024">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0eq4J2-QEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_0eq4JG-QEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:SubroutineCall" href="VB_ID3100_MolecularSerialNumber.icxml#_0eq4IG-QEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0eq4JW-QEeGtte0T2z7rbQ" x="228" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="__ljF82-QEeGtte0T2z7rbQ" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="__ljF9W-QEeGtte0T2z7rbQ" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__ljF9m-QEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3100_MolecularSerialNumber.icxml#__ljF8G-QEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__ljF9G-QEeGtte0T2z7rbQ" x="120" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_XMT742-REeGtte0T2z7rbQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_XMT75m-REeGtte0T2z7rbQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_XMT752-REeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_XMT75G-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3100_MolecularSerialNumber.icxml#_XMT74G-REeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XMT75W-REeGtte0T2z7rbQ" x="228" y="168" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_fhVtJG-REeGtte0T2z7rbQ" type="2027">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fhVtJm-REeGtte0T2z7rbQ" type="5027">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fhVtJ2-REeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Case" href="VB_ID3100_MolecularSerialNumber.icxml#_fhVtIG-REeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fhVtJW-REeGtte0T2z7rbQ" x="348" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_gWsAwm-REeGtte0T2z7rbQ" type="2027">
+    <children xmi:type="notation:DecorationNode" xmi:id="_gWsAxG-REeGtte0T2z7rbQ" type="5027">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gWsAxW-REeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <element xmi:type="icxml:Case" href="VB_ID3100_MolecularSerialNumber.icxml#_gWiPwG-REeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gWsAw2-REeGtte0T2z7rbQ" x="468" y="24" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_rTNYsG-REeGtte0T2z7rbQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rTNYs2-REeGtte0T2z7rbQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_rTNYtG-REeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_rTNYsW-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3100_MolecularSerialNumber.icxml#_rTEOwG-REeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rTNYsm-REeGtte0T2z7rbQ" x="288" y="396" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3MEdE2-REeGtte0T2z7rbQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3MEdFm-REeGtte0T2z7rbQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_3MEdF2-REeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_3MEdFG-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3100_MolecularSerialNumber.icxml#_3MEdEG-REeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3MEdFW-REeGtte0T2z7rbQ" x="468" y="228" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_KQBPIm-SEeGtte0T2z7rbQ" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_KQBPJW-SEeGtte0T2z7rbQ" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KQBPJm-SEeGtte0T2z7rbQ" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_KQBPI2-SEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3100_MolecularSerialNumber.icxml#_KP4FMG-SEeGtte0T2z7rbQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KQBPJG-SEeGtte0T2z7rbQ" x="696" y="24" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_UUZ1w3zmEeGbO9u46mWIFg" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UUZ1xXzmEeGbO9u46mWIFg" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UUZ1xnzmEeGbO9u46mWIFg" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3100_MolecularSerialNumber.icxml#_UUZ1wHzmEeGbO9u46mWIFg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UUZ1xHzmEeGbO9u46mWIFg" x="288" y="204" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_tWla8YpGEeGUwNmavaB-Zg" type="2006">
+    <children xmi:type="notation:DecorationNode" xmi:id="_tWla8opGEeGUwNmavaB-Zg" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_tWla84pGEeGUwNmavaB-Zg" y="5"/>
+    </children>
+    <element xmi:type="icxml:Log" href="VB_ID3100_MolecularSerialNumber.icxml#_tWla9YpGEeGUwNmavaB-Zg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tWla9IpGEeGUwNmavaB-Zg" x="287" y="267" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_NwD0QJUqEeGZhKM4vphuEw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_NwD0QZUqEeGZhKM4vphuEw" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_NwD0QpUqEeGZhKM4vphuEw" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3100_MolecularSerialNumber.icxml#_NwD0RJUqEeGZhKM4vphuEw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NwD0Q5UqEeGZhKM4vphuEw" x="576" y="24" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_pfwCoJq1EeGL-_zkQgcrtA" type="2004">
+    <children xmi:type="notation:DecorationNode" xmi:id="_pfwCoZq1EeGL-_zkQgcrtA" type="5004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_pfwCopq1EeGL-_zkQgcrtA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Decision" href="VB_ID3100_MolecularSerialNumber.icxml#_pfwCpJq1EeGL-_zkQgcrtA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pfwCo5q1EeGL-_zkQgcrtA" x="348" y="108" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qdlj4Zq1EeGL-_zkQgcrtA" type="2048">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qdlj4pq1EeGL-_zkQgcrtA" type="5048">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdlj45q1EeGL-_zkQgcrtA" y="5"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_qdlj5Jq1EeGL-_zkQgcrtA"/>
+    <element xmi:type="icxml:FunctionalBlockCall" href="VB_ID3100_MolecularSerialNumber.icxml#_qdlj7pq1EeGL-_zkQgcrtA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qdlj5Zq1EeGL-_zkQgcrtA" x="396" y="396" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qdlj5pq1EeGL-_zkQgcrtA" type="2052">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qdlj55q1EeGL-_zkQgcrtA" type="5052">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdlj6Jq1EeGL-_zkQgcrtA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Script" href="VB_ID3100_MolecularSerialNumber.icxml#_qdlj8Zq1EeGL-_zkQgcrtA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qdlj6Zq1EeGL-_zkQgcrtA" x="396" y="204" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qdlj6pq1EeGL-_zkQgcrtA" type="2006">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qdlj65q1EeGL-_zkQgcrtA" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdlj7Jq1EeGL-_zkQgcrtA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Log" href="VB_ID3100_MolecularSerialNumber.icxml#_qdlj9pq1EeGL-_zkQgcrtA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qdlj7Zq1EeGL-_zkQgcrtA" x="395" y="267" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Ba3QYZ92EeGPY-tYxKi6pA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ba3QYp92EeGPY-tYxKi6pA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ba3QY592EeGPY-tYxKi6pA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3100_MolecularSerialNumber.icxml#_Ba3QZZ92EeGPY-tYxKi6pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ba3QZJ92EeGPY-tYxKi6pA" x="228" y="108" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_IKr-YZ92EeGPY-tYxKi6pA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IKr-Yp92EeGPY-tYxKi6pA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IKr-Y592EeGPY-tYxKi6pA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3100_MolecularSerialNumber.icxml#_IKr-ZZ92EeGPY-tYxKi6pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IKr-ZJ92EeGPY-tYxKi6pA" x="288" y="336" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_OxR34Z92EeGPY-tYxKi6pA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_OxR34p92EeGPY-tYxKi6pA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_OxR34592EeGPY-tYxKi6pA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3100_MolecularSerialNumber.icxml#_OxR35Z92EeGPY-tYxKi6pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OxR35J92EeGPY-tYxKi6pA" x="396" y="336" width="58" height="43"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_U9x2YJ92EeGPY-tYxKi6pA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_U9x2YZ92EeGPY-tYxKi6pA" type="5001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_U9x2Yp92EeGPY-tYxKi6pA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Calculate" href="VB_ID3100_MolecularSerialNumber.icxml#_U9x2ZJ92EeGPY-tYxKi6pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U9x2Y592EeGPY-tYxKi6pA" x="468" y="108" width="0" height="0"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_oAG8oKZtEeGBbZD-5nuhxA" type="2006">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oAG8oaZtEeGBbZD-5nuhxA" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_oAG8oqZtEeGBbZD-5nuhxA" y="5"/>
+    </children>
+    <element xmi:type="icxml:Log" href="VB_ID3100_MolecularSerialNumber.icxml#_oAG8pKZtEeGBbZD-5nuhxA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oAG8o6ZtEeGBbZD-5nuhxA" x="468" y="168" width="0" height="0"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_kgDKM2-OEeGtte0T2z7rbQ"/>
+  <element xmi:type="icxml:RootType" href="VB_ID3100_MolecularSerialNumber.icxml#_kgDKMW-OEeGtte0T2z7rbQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_AStG4W-REeGtte0T2z7rbQ" type="4001" source="_kgDKPW-OEeGtte0T2z7rbQ" target="__ljF82-QEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AStG5G-REeGtte0T2z7rbQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_AStG5W-REeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_AStG4m-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_AStG4G-REeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AStG42-REeGtte0T2z7rbQ" points="[29, 2, -67, 2]$[95, 22, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_DbKFkW-REeGtte0T2z7rbQ" type="4001" source="__ljF82-QEeGtte0T2z7rbQ" target="_0eq4I2-QEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DbKFlG-REeGtte0T2z7rbQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DbKFlW-REeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_DbKFkm-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_DbKFkG-REeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DbKFk2-REeGtte0T2z7rbQ" points="[29, -1, -79, -1]$[78, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_YYc-4W-REeGtte0T2z7rbQ" type="4002" source="_0eq4I2-QEeGtte0T2z7rbQ" target="_Ba3QYZ92EeGPY-tYxKi6pA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_YYc-5G-REeGtte0T2z7rbQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YYc-5W-REeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YYc-4m-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_YYc-4G-REeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YYc-42-REeGtte0T2z7rbQ" points="[1, 22, -6, -76]$[6, 120, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_lD2TcW-REeGtte0T2z7rbQ" type="4002" source="_0eq4I2-QEeGtte0T2z7rbQ" target="_fhVtJG-REeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lD2TdG-REeGtte0T2z7rbQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_lD2TdW-REeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_lD2Tcm-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_lD2TcG-REeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lD2Tc2-REeGtte0T2z7rbQ" points="[29, -2, -91, -2]$[90, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_wBj-MW-REeGtte0T2z7rbQ" type="4001" source="_fhVtJG-REeGtte0T2z7rbQ" target="_gWsAwm-REeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wBj-NG-REeGtte0T2z7rbQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wBj-NW-REeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wBj-Mm-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_wBj-MG-REeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wBj-M2-REeGtte0T2z7rbQ" points="[29, -2, -91, -2]$[90, 0, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_4gaZ0W-REeGtte0T2z7rbQ" type="4002" source="_gWsAwm-REeGtte0T2z7rbQ" target="_U9x2YJ92EeGPY-tYxKi6pA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4gaZ1G-REeGtte0T2z7rbQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4gaZ1W-REeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4gaZ0m-REeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_4gaZ0G-REeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4gaZ02-REeGtte0T2z7rbQ" points="[-1, 22, -2, -69]$[0, 69, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_LCFlQW-SEeGtte0T2z7rbQ" type="4001" source="_gWsAwm-REeGtte0T2z7rbQ" target="_NwD0QJUqEeGZhKM4vphuEw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LCFlRG-SEeGtte0T2z7rbQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_LCFlRW-SEeGtte0T2z7rbQ" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_LCFlQm-SEeGtte0T2z7rbQ"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_LCFlQG-SEeGtte0T2z7rbQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LCFlQ2-SEeGtte0T2z7rbQ" points="[29, -3, -91, -3]$[90, -22, -30, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_U0Js0HzmEeGbO9u46mWIFg" type="4002" source="_fhVtJG-REeGtte0T2z7rbQ" target="_pfwCoJq1EeGL-_zkQgcrtA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_U0Js03zmEeGbO9u46mWIFg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_U0Js1HzmEeGbO9u46mWIFg" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_U0Js0XzmEeGbO9u46mWIFg"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_Uz_70HzmEeGbO9u46mWIFg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U0Js0nzmEeGbO9u46mWIFg" points="[-4, 22, -5, -71]$[-29, 93, -30, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_W5g20XzmEeGbO9u46mWIFg" type="4001" source="_UUZ1w3zmEeGbO9u46mWIFg" target="_tWla8YpGEeGUwNmavaB-Zg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_W5g21HzmEeGbO9u46mWIFg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_W5g21XzmEeGbO9u46mWIFg" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_W5g20nzmEeGbO9u46mWIFg"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_W5g20HzmEeGbO9u46mWIFg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_W5g203zmEeGbO9u46mWIFg" points="[-1, 22, 0, -65]$[-2, 109, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_vB3RAYpGEeGUwNmavaB-Zg" type="4001" source="_tWla8YpGEeGUwNmavaB-Zg" target="_IKr-YZ92EeGPY-tYxKi6pA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vB3RBIpGEeGUwNmavaB-Zg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_vB3RBYpGEeGUwNmavaB-Zg" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_vB3RAopGEeGUwNmavaB-Zg"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_vB3RAIpGEeGUwNmavaB-Zg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vB3RA4pGEeGUwNmavaB-Zg" points="[-2, 22, -2, -50]$[-1, 50, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_QoVB4ZUqEeGZhKM4vphuEw" type="4001" source="_NwD0QJUqEeGZhKM4vphuEw" target="_KQBPIm-SEeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QoVB5JUqEeGZhKM4vphuEw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_QoVB5ZUqEeGZhKM4vphuEw" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_QoVB4pUqEeGZhKM4vphuEw"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_QoVB4JUqEeGZhKM4vphuEw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QoVB45UqEeGZhKM4vphuEw" points="[29, 2, -91, 2]$[119, 22, -1, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_qdvU4Jq1EeGL-_zkQgcrtA" type="4001" source="_qdlj5pq1EeGL-_zkQgcrtA" target="_qdlj6pq1EeGL-_zkQgcrtA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qdvU45q1EeGL-_zkQgcrtA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdvU5Jq1EeGL-_zkQgcrtA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qdvU4Zq1EeGL-_zkQgcrtA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_qdlj9Zq1EeGL-_zkQgcrtA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qdvU4pq1EeGL-_zkQgcrtA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_qdvU5Zq1EeGL-_zkQgcrtA" type="4001" source="_qdlj6pq1EeGL-_zkQgcrtA" target="_OxR34Z92EeGPY-tYxKi6pA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qdvU6Jq1EeGL-_zkQgcrtA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdvU6Zq1EeGL-_zkQgcrtA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qdvU5pq1EeGL-_zkQgcrtA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_qdlj-pq1EeGL-_zkQgcrtA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qdvU55q1EeGL-_zkQgcrtA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_tnVjEZq1EeGL-_zkQgcrtA" type="4002" source="_pfwCoJq1EeGL-_zkQgcrtA" target="_UUZ1w3zmEeGbO9u46mWIFg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_tnfUEJq1EeGL-_zkQgcrtA" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_tnfUEZq1EeGL-_zkQgcrtA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_tnVjEpq1EeGL-_zkQgcrtA"/>
+    <element xmi:type="icxml:ConditionalConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_tnVjEJq1EeGL-_zkQgcrtA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tnVjE5q1EeGL-_zkQgcrtA" points="[-15, 22, 45, -74]$[-61, 74, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_u3DegZq1EeGL-_zkQgcrtA" type="4001" source="_pfwCoJq1EeGL-_zkQgcrtA" target="_qdlj5pq1EeGL-_zkQgcrtA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_u3DehJq1EeGL-_zkQgcrtA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u3DehZq1EeGL-_zkQgcrtA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_u3Degpq1EeGL-_zkQgcrtA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_u3DegJq1EeGL-_zkQgcrtA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u3Deg5q1EeGL-_zkQgcrtA" points="[11, 22, -37, -74]$[77, 74, 29, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_C_5UgZ92EeGPY-tYxKi6pA" type="4001" source="_Ba3QYZ92EeGPY-tYxKi6pA" target="_XMT742-REeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_C_5UhJ92EeGPY-tYxKi6pA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_C_5UhZ92EeGPY-tYxKi6pA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_C_5Ugp92EeGPY-tYxKi6pA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_C_5UgJ92EeGPY-tYxKi6pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_C_5Ug592EeGPY-tYxKi6pA" points="[1, 22, 1, -38]$[29, 60, 29, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_MNN_sZ92EeGPY-tYxKi6pA" type="4001" source="_IKr-YZ92EeGPY-tYxKi6pA" target="_rTNYsG-REeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MNN_tJ92EeGPY-tYxKi6pA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MNN_tZ92EeGPY-tYxKi6pA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_MNN_sp92EeGPY-tYxKi6pA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_MNN_sJ92EeGPY-tYxKi6pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MNN_s592EeGPY-tYxKi6pA" points="[-2, 22, -2, -38]$[-1, 38, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_RSyyYZ92EeGPY-tYxKi6pA" type="4001" source="_OxR34Z92EeGPY-tYxKi6pA" target="_qdlj4Zq1EeGL-_zkQgcrtA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_RSyyZJ92EeGPY-tYxKi6pA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RSyyZZ92EeGPY-tYxKi6pA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RSyyYp92EeGPY-tYxKi6pA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_RSyyYJ92EeGPY-tYxKi6pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RSyyY592EeGPY-tYxKi6pA" points="[-2, 22, -2, -38]$[-1, 38, -1, -22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_YtY7sZ92EeGPY-tYxKi6pA" type="4001" source="_U9x2YJ92EeGPY-tYxKi6pA" target="_oAG8oKZtEeGBbZD-5nuhxA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_YtY7tJ92EeGPY-tYxKi6pA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YtY7tZ92EeGPY-tYxKi6pA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YtY7sp92EeGPY-tYxKi6pA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_YtY7sJ92EeGPY-tYxKi6pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YtY7s592EeGPY-tYxKi6pA" points="[-3, 22, -3, -50]$[-30, 94, -30, 22]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_pt7JUaZtEeGBbZD-5nuhxA" type="4001" source="_oAG8oKZtEeGBbZD-5nuhxA" target="_3MEdE2-REeGtte0T2z7rbQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_pt7JVKZtEeGBbZD-5nuhxA" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_pt7JVaZtEeGBbZD-5nuhxA" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_pt7JUqZtEeGBbZD-5nuhxA"/>
+    <element xmi:type="icxml:DefaultConnection" href="VB_ID3100_MolecularSerialNumber.icxml#_pt7JUKZtEeGBbZD-5nuhxA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pt7JU6ZtEeGBbZD-5nuhxA" points="[2, 22, 2, -38]$[-1, 82, -1, 22]"/>
+  </edges>
+</notation:Diagram>

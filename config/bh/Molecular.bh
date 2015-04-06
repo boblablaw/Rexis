@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains xmlns="http://www.intervoice.com/schema/property/3.0">
+  <audit savedby="IC Business Hours Configuration" timestamp="Mon Jan 26 15:07:33 EST 2015" version="3.0.2.0"/>
+  <domain allow-add="false" domain-type="BH" id="">
+    <description value="IC Business Hours Configuration"/>
+    <display-name value="Molecular.bh"/>
+    <property key="Mon">
+      <app-value value="06:00-23:00"/>
+      <description value="Monday"/>
+    </property>
+    <property key="Tue">
+      <app-value value="06:00-23:00"/>
+      <description value="Tuesday"/>
+    </property>
+    <property key="Wed">
+      <app-value value="06:00-23:00"/>
+      <description value="Wednesday"/>
+    </property>
+    <property key="Thu">
+      <app-value value="06:00-23:00"/>
+      <description value="Thursday"/>
+    </property>
+    <property key="Fri">
+      <app-value value="06:00-23:00"/>
+      <description value="Friday"/>
+    </property>
+    <property key="Sat">
+      <app-value value="closed"/>
+      <description value="Saturday"/>
+    </property>
+    <property key="Sun">
+      <app-value value="closed"/>
+      <description value="Sunday"/>
+    </property>
+    <property key="20150525" removable="true">
+      <app-value value="07:00-15:00"/>
+      <description value="Memorial Day"/>
+    </property>
+    <property key="20150704" removable="true">
+      <app-value value="07:00-16:00"/>
+      <description value="Independence Day"/>
+    </property>
+    <property key="20150907" removable="true">
+      <app-value value="07:00-16:00"/>
+      <description value="Labor Day"/>
+    </property>
+    <property key="20151126" removable="true">
+      <app-value value="closed"/>
+      <description value="Thanksgiving"/>
+    </property>
+    <property key="20151127" removable="true">
+      <app-value value="07:00-18:30"/>
+      <description value="Day after Thanksgiving"/>
+    </property>
+    <property key="20151224" removable="true">
+      <app-value value="07:00-18:30"/>
+      <description value="Christmas Eve"/>
+    </property>
+    <property key="20151225" removable="true">
+      <app-value value="07:00-15:00"/>
+      <description value="Christmas Day"/>
+    </property>
+    <property key="20151231" removable="true">
+      <app-value value="07:00-18:30"/>
+      <description value="New Years Eve"/>
+    </property>
+    <property key="20160101" removable="true">
+      <app-value value="07:00-15:00"/>
+      <description value="New Years Day"/>
+    </property>
+  </domain>
+</domains>

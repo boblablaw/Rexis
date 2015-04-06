@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="RP2250_FaxNumber grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+
+	
+<rule id="root" scope="public">
+	<item repeat="0-1"><ruleref uri="#prePhone"/></item>
+    <item repeat="0-1">area code</item>
+	
+	<item><ruleref uri="#digits_ten"/>
+		<tag> DATA=digits_ten.DIGITSTRING;CHOICE='phonenumber' </tag>
+	</item>
+		
+</rule>
+
+
+<!--#################################################################
+INDIVIDUAL LENGTHS
+####################################################################-->
+
+<rule id="digits_ten" scope="public">
+<item>
+				<tag>DIGITSTRING='';</tag>
+				
+				<item> <ruleref uri="#start"/>
+					<tag>DIGITSTRING=start.DIGIT;</tag>
+				</item>
+				<item><ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				<item>	<ruleref uri="#digit"/>
+					<tag>DIGITSTRING=DIGITSTRING + digit.DIGIT;</tag>
+				</item>
+				
+</item>
+</rule>
+
+<!--#################################################################
+COMPONENTS
+####################################################################-->
+
+<rule id="start" scope="public">
+		<one-of>
+			<item><tag>DIGIT='2';</tag>two</item>
+			<item><tag>DIGIT='3';</tag>three</item>
+			<item><tag>DIGIT='4';</tag>four</item>
+			<item><tag>DIGIT='5';</tag>five</item>
+			<item><tag>DIGIT='6';</tag>six</item>
+			<item><tag>DIGIT='7';</tag>seven</item>
+			<item><tag>DIGIT='8';</tag>eight</item>
+			<item><tag>DIGIT='9';</tag>nine</item>
+		</one-of>
+</rule>
+
+<rule id="digit" scope="public">
+		<one-of>
+			<item><tag>DIGIT='1';</tag>one</item>
+			<item><tag>DIGIT='2';</tag>two</item>
+			<item><tag>DIGIT='3';</tag>three</item>
+			<item><tag>DIGIT='4';</tag>four</item>
+			<item><tag>DIGIT='5';</tag>five</item>
+			<item><tag>DIGIT='6';</tag>six</item>
+			<item><tag>DIGIT='7';</tag>seven</item>
+			<item><tag>DIGIT='8';</tag>eight</item>
+			<item><tag>DIGIT='9';</tag>nine</item>
+			<item><tag>DIGIT='0';</tag>zero</item>
+			<item weight="0.001"><tag>DIGIT='0';</tag>oh</item>
+		</one-of>
+</rule>
+
+<rule id="prePhone" scope="public">
+<!--cell, home, work not distinguished-->
+	<item repeat="0-1"><ruleref uri="#hesitation"/></item>
+	<one-of>
+		<item><item><ruleref uri="#myThe"/></item>fax number is</item>
+		<item><item><ruleref uri="#myThe"/></item>fax is</item>
+		<item><item><ruleref uri="#myThe"/></item>number is</item>
+		<item>fax number</item>
+		<item>fax </item>
+		<item>number</item>
+	</one-of>
+</rule>
+
+<rule id="myThe" scope="public">
+	<one-of>
+		<item>my</item>
+		<item>the</item>
+	</one-of>
+</rule>
+
+<rule id="hesitation" scope="public">
+	<one-of>
+		<item>um</item>
+		<item>uh</item>
+		<item>ah</item>
+	</one-of>
+</rule>
+
+
+</grammar>
